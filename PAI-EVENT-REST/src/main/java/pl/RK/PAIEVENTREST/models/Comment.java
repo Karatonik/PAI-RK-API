@@ -7,7 +7,7 @@ import java.util.Date;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int commentId;
+    long commentId;
 
     String text;
 

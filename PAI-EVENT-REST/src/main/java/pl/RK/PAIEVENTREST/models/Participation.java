@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Participation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int participationId;
+    long participationId;
 
     boolean approved;
 

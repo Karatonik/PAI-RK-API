@@ -17,7 +17,7 @@ import javax.persistence.Id;
 public class UserPAI {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int userId;
+    long userId;
 
     String login;
 

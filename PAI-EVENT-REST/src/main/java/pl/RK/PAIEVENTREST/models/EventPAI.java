@@ -18,7 +18,7 @@ import java.util.Set;
 public class EventPAI {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int eventID;
+    long eventID;
 
     String name;
 
