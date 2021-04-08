@@ -1,16 +1,25 @@
 package pl.RK.PAIEVENTREST.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 public class Participation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long participationId;
+    Integer participationId;
 
     boolean approved;
 
-    @OneToOne
+   @OneToOne
     UserPAI userPAI;
 
     @OneToOne
