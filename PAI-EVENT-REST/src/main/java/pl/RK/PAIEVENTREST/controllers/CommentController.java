@@ -1,14 +1,12 @@
 package pl.RK.PAIEVENTREST.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.RK.PAIEVENTREST.models.dto.CommentDto;
 import pl.RK.PAIEVENTREST.services.implementations.CommentServiceImp;
 
-@RestController("/comm")
+@RestController
+@RequestMapping("api/comm")
 public class CommentController {
 
     CommentServiceImp commentService;
@@ -20,5 +18,14 @@ public class CommentController {
     @PostMapping
     public CommentDto addComment(String email, int eventId ,@RequestBody String text){
         return new CommentDto( commentService.set(email,eventId,text));
+    }
+
+    @DeleteMapping
+    public boolean delete(int commentId){
+        return  commentService.delete(commentId);    }
+
+    @PutMapping
+    public CommentDto update(int commentId ,String text){
+        return new CommentDto(commentService.update(commentId , text));
     }
 }

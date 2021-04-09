@@ -11,5 +11,10 @@ public interface UserPaiServiceIF {
 
     public boolean deleteWithKey(String key);
 
+    public UserPAI set(String email,String password ,String nick);
+
+    public boolean requestToJoinEvent(String email,int eventId);
+
+    public boolean acceptParticipation(int participationId , String email);
 
 }

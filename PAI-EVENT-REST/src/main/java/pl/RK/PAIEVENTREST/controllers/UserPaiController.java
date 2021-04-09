@@ -1,12 +1,16 @@
 package pl.RK.PAIEVENTREST.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.RK.PAIEVENTREST.models.UserPAI;
+import pl.RK.PAIEVENTREST.models.dto.UserPAIDto;
 import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
 
-@RestController("/api/user")
+@RestController
+@RequestMapping("/api/user")
 public class UserPaiController {
 
 
@@ -22,8 +26,8 @@ public class UserPaiController {
     }
 
     @PutMapping("/reset")
-    public UserPAI reset(String key){
-        return userPaiService.resetPassword(key);
+    public UserPAIDto reset(String key){
+        return new UserPAIDto(userPaiService.resetPassword(key));
     }
 
     @PutMapping("/delete")
@@ -31,5 +35,19 @@ public class UserPaiController {
         return userPaiService.deleteWithKey(key);
     }
 
+    @PostMapping
+    public UserPAIDto set(String email,String password , String nick){
+        return new UserPAIDto(userPaiService.set(email,password,nick));
+    }
+
+    @PostMapping("/rtje")
+    public boolean requestToJoinEvent(String email,int eventId){
+        return userPaiService.requestToJoinEvent(email, eventId);
+    }
+
+    @PutMapping("/accept")
+    public boolean acceptRequestToJoin(int participleId , String email){
+        return userPaiService.acceptParticipation(participleId,email);
+    }
 
 }

@@ -1,7 +1,5 @@
 package pl.RK.PAIEVENTREST.models.enums;
 
-public enum AccessPAI {
-    Open,Closed
-
-
+public enum RequestFrom {
+    User,Event
 }

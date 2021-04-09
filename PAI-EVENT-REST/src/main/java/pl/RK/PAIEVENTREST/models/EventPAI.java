@@ -24,6 +24,13 @@ public class EventPAI {
     @Column(nullable = false)
     String name;
 
+
+    @Column(nullable = false)
+    String province;
+
+    @Column(nullable = false)
+    String city;
+
     @Column(nullable = false)
     String address;
 
@@ -43,11 +50,16 @@ public class EventPAI {
     @JoinColumn(name ="userpai")
     Set<UserPAI> userSet;
 
-    public EventPAI(String name, String address, AccessPAI access, Date dateOfStarEvent, Set<UserPAI> organizer) {
+
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, Date dateOfStarEvent, Set<UserPAI> userSet) {
         this.name = name;
+        this.province = province;
+        this.city = city;
         this.address = address;
         this.access = access;
         this.dateOfStarEvent = dateOfStarEvent;
-        OrganizerSet = organizer;
+        this.userSet = userSet;
     }
+
+
 }

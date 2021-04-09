@@ -10,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.util.Date;
 import java.util.Objects;
 
 @AllArgsConstructor
@@ -62,7 +63,13 @@ public class UserPAI {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEmail(), getPassword(), getNick());
+        return Objects.hash(getEmail(), getPassword(), getNick(), new Date(System.currentTimeMillis()));
     }
+
+    public String getUserKey(){
+        this.userKey=String.valueOf(hashCode());
+        return userKey;
+    }
+
 }
 

@@ -12,5 +12,7 @@ import java.util.Set;
 public interface EventPaiRepository extends JpaRepository<EventPAI , Integer> {
 
 
-    public List<EventPAI> findByNameAndAddress(String name, String address);
+    public List<EventPAI> findByNameOrProvinceOrCityOrAddress(String name,String province,String city, String address);
+
+    public List<EventPAI> findByNameAndProvinceAndCityAndAddress(String name,String province,String city, String address);
 }

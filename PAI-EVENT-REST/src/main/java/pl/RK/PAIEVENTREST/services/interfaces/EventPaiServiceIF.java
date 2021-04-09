@@ -18,7 +18,17 @@ public interface EventPaiServiceIF {
 
     public Set<UserPAI> getAllAdmins(int eventId);
 
-    public EventPAI  set(String name, String address , AccessPAI accessPAI , Date dateOfStartEvent , String emailOfCreator);
+    public List<EventPAI> get(String name,String province, String city, String address);
+
+    public EventPAI  set(String name,String province, String city, String address , AccessPAI accessPAI , Date dateOfStartEvent , String emailOfCreator);
 
     public boolean delete(int eventId);
+
+    public boolean changeAccess(int eventId);
+
+    public boolean addUser(String email,int eventId);
+
+    public boolean acceptParticipation(int participationId ,int eventId);
+
+    public boolean setUserAsAdmin(String email, int eventId);
 }

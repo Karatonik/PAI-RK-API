@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.RK.PAIEVENTREST.models.enums.RequestFrom;
 
 import javax.persistence.*;
 
@@ -17,7 +18,8 @@ public class Participation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer participationId;
 
-    boolean approved;
+
+    RequestFrom request;
 
    @OneToOne
     UserPAI userPAI;
@@ -25,4 +27,9 @@ public class Participation {
     @OneToOne
     EventPAI eventPAI;
 
+    public Participation(RequestFrom request, UserPAI userPAI, EventPAI eventPAI) {
+        this.request = request;
+        this.userPAI = userPAI;
+        this.eventPAI = eventPAI;
+    }
 }
