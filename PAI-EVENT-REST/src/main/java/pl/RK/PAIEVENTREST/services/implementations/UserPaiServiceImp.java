@@ -112,5 +112,11 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         return false;
     }
 
+    @Override
+    public UserPAI login(String email, String password) {
+        Optional<UserPAI> optionalUserPAI = userPaiRepository.findByEmailAndPassword(email,password);
+        return optionalUserPAI.orElse(null);
+    }
+
 
 }

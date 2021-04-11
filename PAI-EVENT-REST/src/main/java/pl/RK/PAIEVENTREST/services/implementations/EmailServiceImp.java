@@ -43,7 +43,13 @@ public class EmailServiceImp implements EmailServiceIF {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
             mimeMessageHelper.setTo(to);
             mimeMessageHelper.setSubject("Confirmation");
-            mimeMessageHelper.setText(confMessage + optionalUserPAI.get().getUserKey(), true);
+
+            UserPAI userPAI = optionalUserPAI.get();
+            userPAI.getNewKey();
+            userPaiRepository.save(userPAI);
+
+
+            mimeMessageHelper.setText(confMessage + userPAI.getUserKey(), true);
             javaMailSender.send(mimeMessage);
         }
     }
@@ -56,7 +62,13 @@ public class EmailServiceImp implements EmailServiceIF {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
             mimeMessageHelper.setTo(to);
             mimeMessageHelper.setSubject("Reset Password");
-            mimeMessageHelper.setText(resetMessage + optionalUserPAI.get().getUserKey(), true);
+
+            UserPAI userPAI = optionalUserPAI.get();
+            userPAI.getNewKey();
+            userPaiRepository.save(userPAI);
+
+
+            mimeMessageHelper.setText(resetMessage + userPAI.getUserKey(), true);
             javaMailSender.send(mimeMessage);
         }
     }
@@ -69,7 +81,12 @@ public class EmailServiceImp implements EmailServiceIF {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
             mimeMessageHelper.setTo(to);
             mimeMessageHelper.setSubject("Delete Account");
-            mimeMessageHelper.setText(deleteMessage + optionalUserPAI.get().getUserKey(), true);
+
+            UserPAI userPAI = optionalUserPAI.get();
+            userPAI.getNewKey();
+            userPaiRepository.save(userPAI);
+
+            mimeMessageHelper.setText(deleteMessage + userPAI.getUserKey(), true);
             javaMailSender.send(mimeMessage);
         }
     }

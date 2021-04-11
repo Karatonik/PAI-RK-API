@@ -66,12 +66,11 @@ public class UserPAI {
         return Objects.hash(getEmail(), getPassword(), getNick(), new Date(System.currentTimeMillis()));
     }
 
-    public String getUserKey(){
-        //todo
-        this.userKey=String.valueOf(hashCode());
-        return userKey;
+    public void getNewKey(){
+        this.userKey = String.valueOf(hashCode());
     }
-    ///
+
+
 
 }
 

@@ -1,10 +1,7 @@
 package pl.RK.PAIEVENTREST.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.RK.PAIEVENTREST.models.UserPAI;
 import pl.RK.PAIEVENTREST.models.dto.UserPAIDto;
 import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
@@ -53,7 +50,8 @@ public class UserPaiController {
     public boolean acceptRequestToJoin(int participleId , String email){
         return userPaiService.acceptParticipation(participleId,email);
     }
-
-    //logowanie
-
+    @GetMapping("/login")
+    public UserPAIDto login(String email , String password){
+        return new UserPAIDto(userPaiService.login(email,password));
+    }
 }
