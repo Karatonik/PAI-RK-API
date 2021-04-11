@@ -13,13 +13,13 @@ public class CommentDto {
     int commentId;
     String text;
     Date date;
-    String userEmailList;
+    String userEmail;
 
     public CommentDto(Comment comment) {
         this.commentId = comment.getCommentId();
         this.text = comment.getText();
         this.date = comment.getDate();
-        this.userEmailList=comment.getUserPai().getEmail();
+        this.userEmail=comment.getUserPai().getEmail();
     }
 
 }

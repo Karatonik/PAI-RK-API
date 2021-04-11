@@ -30,8 +30,8 @@ public class EventPaiController {
     }
 
     @PostMapping
-    public EventPAIDto addEvent(String name,@RequestBody String prov ,@RequestBody String city ,@RequestBody String address , @RequestBody AccessPAI accessPAI
-            , @RequestBody Date dateOfStartEvent ,@RequestBody String email){
+    public EventPAIDto addEvent(String name, String prov ,String city , String address ,  AccessPAI accessPAI
+            , Date dateOfStartEvent , String email){
         return new EventPAIDto( eventPaiService.set(name,prov,city,address,accessPAI,dateOfStartEvent,email));
     }
 
@@ -41,7 +41,7 @@ public class EventPaiController {
     }
 
     @GetMapping
-    public List<EventPAIDto> get(String name,@RequestBody String prov ,@RequestBody String city ,@RequestBody String address){
+    public List<EventPAIDto> get(String name,String prov , String city ,String address){
         return eventPaiService.get(name,prov,city,address).stream().map(EventPAIDto::new).collect(Collectors.toList());
     }
 

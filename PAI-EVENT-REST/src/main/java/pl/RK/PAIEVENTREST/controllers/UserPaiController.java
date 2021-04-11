@@ -30,11 +30,15 @@ public class UserPaiController {
         return new UserPAIDto(userPaiService.resetPassword(key));
     }
 
+    //todo reset hasła vali
+
     @PutMapping("/delete")
     public boolean delete(String key){
         return userPaiService.deleteWithKey(key);
     }
 
+
+    //rejestracja
     @PostMapping
     public UserPAIDto set(String email,String password , String nick){
         return new UserPAIDto(userPaiService.set(email,password,nick));
@@ -49,5 +53,7 @@ public class UserPaiController {
     public boolean acceptRequestToJoin(int participleId , String email){
         return userPaiService.acceptParticipation(participleId,email);
     }
+
+    //logowanie
 
 }

@@ -45,7 +45,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     @Override
     public UserPAI resetPassword(String key) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findByUserKey(key);
-        return optionalUserPAI.orElse(null);
+        return optionalUserPAI.orElse(null);//todo
     }
 
     //usuwanie po kluczu

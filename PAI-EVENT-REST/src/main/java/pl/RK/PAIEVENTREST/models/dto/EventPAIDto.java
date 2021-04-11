@@ -23,6 +23,12 @@ public class EventPAIDto {
 
     String name;
 
+
+    String province;
+
+
+    String city;
+
     String address;
 
     AccessPAI access;
@@ -35,6 +41,8 @@ public class EventPAIDto {
     public EventPAIDto(EventPAI eventPAI) {
         this.eventID = eventPAI.getEventID();
         this.name = eventPAI.getName();
+        this.province=eventPAI.getProvince();
+        this.city =eventPAI.getCity();
         this.address = eventPAI.getAddress();
         this.access = eventPAI.getAccess();
         this.dateOfCreate = eventPAI.getDateOfCreate();
