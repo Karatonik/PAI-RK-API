@@ -7,6 +7,7 @@ import pl.RK.PAIEVENTREST.models.dto.EventPAIDto;
 import pl.RK.PAIEVENTREST.models.dto.UserPAIDto;
 import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Date;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/event")
+@EnableSwagger2
 public class EventPaiController {
 
     EventPaiServiceImp eventPaiService;

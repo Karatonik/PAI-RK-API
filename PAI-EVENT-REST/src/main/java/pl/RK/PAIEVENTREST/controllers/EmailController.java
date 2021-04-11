@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.RK.PAIEVENTREST.services.implementations.EmailServiceImp;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.mail.MessagingException;
 
 @RestController
 @RequestMapping("/api/mail")
+@EnableSwagger2
 public class EmailController {
 
     EmailServiceImp emailService;

@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.RK.PAIEVENTREST.models.dto.ParticipationDto;
 import pl.RK.PAIEVENTREST.services.implementations.ParticipationServiceImp;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/parti")
+@EnableSwagger2
 public class ParticipationController {
 
     ParticipationServiceImp participationService;

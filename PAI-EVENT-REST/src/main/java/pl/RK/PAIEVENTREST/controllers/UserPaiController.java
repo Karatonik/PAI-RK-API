@@ -5,9 +5,12 @@ import org.springframework.web.bind.annotation.*;
 import pl.RK.PAIEVENTREST.models.UserPAI;
 import pl.RK.PAIEVENTREST.models.dto.UserPAIDto;
 import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @RestController
 @RequestMapping("/api/user")
+@EnableSwagger2
+//http://localhost:8080/swagger-ui.html#/
 public class UserPaiController {
 
 
