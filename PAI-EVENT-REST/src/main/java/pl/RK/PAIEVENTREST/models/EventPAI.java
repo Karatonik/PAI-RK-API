@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -37,10 +38,10 @@ public class EventPAI {
     AccessPAI access;
 
     @CreationTimestamp
-    Date dateOfCreate;
+    LocalDateTime dateOfCreate;
 
     @Column(nullable = false)
-    Date dateOfStarEvent;
+    LocalDateTime dateOfStarEvent;
 
     @OneToMany
     @JoinColumn(name ="userpai")
@@ -51,7 +52,7 @@ public class EventPAI {
     Set<UserPAI> userSet;
 
 
-    public EventPAI(String name, String province, String city, String address, AccessPAI access, Date dateOfStarEvent, Set<UserPAI> userSet) {
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStarEvent, Set<UserPAI> userSet) {
         this.name = name;
         this.province = province;
         this.city = city;

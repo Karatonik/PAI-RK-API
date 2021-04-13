@@ -14,6 +14,7 @@ import pl.RK.PAIEVENTREST.repositorys.ParticipationRepository;
 import pl.RK.PAIEVENTREST.repositorys.UserPaiRepository;
 import pl.RK.PAIEVENTREST.services.interfaces.EventPaiServiceIF;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -55,7 +56,7 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
         return eventPaiRepository.findByNameOrProvinceOrCityOrAddress(name, province,city,address);
     }
     @Override
-    public EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, Date dateOfStartEvent, String emailOfCreator) {
+    public EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(emailOfCreator);
         if(optionalUserPAI.isPresent()){
             if(eventPaiRepository.findByNameAndProvinceAndCityAndAddress(name,province,city,address).isEmpty()){

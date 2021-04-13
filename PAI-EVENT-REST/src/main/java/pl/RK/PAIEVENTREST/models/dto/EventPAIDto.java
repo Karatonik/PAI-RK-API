@@ -12,6 +12,7 @@ import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 @Getter
@@ -33,9 +34,9 @@ public class EventPAIDto {
 
     AccessPAI access;
 
-    Date dateOfCreate;
+    LocalDateTime dateOfCreate;
 
-    Date dateOfStarEvent;
+    LocalDateTime dateOfStarEvent;
 
 
     public EventPAIDto(EventPAI eventPAI) {

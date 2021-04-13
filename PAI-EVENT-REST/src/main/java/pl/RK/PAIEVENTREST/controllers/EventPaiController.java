@@ -9,6 +9,7 @@ import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -32,8 +33,8 @@ public class EventPaiController {
     }
 
     @PostMapping
-    public EventPAIDto addEvent(String name, String prov ,String city , String address ,  AccessPAI accessPAI
-            , Date dateOfStartEvent , String email){
+    public EventPAIDto addEvent(String name, String prov , String city , String address , AccessPAI accessPAI
+            , LocalDateTime dateOfStartEvent , String email){
         return new EventPAIDto( eventPaiService.set(name,prov,city,address,accessPAI,dateOfStartEvent,email));
     }
 
