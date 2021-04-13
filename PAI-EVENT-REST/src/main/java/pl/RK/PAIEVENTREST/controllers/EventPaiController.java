@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/event")
-@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 @EnableSwagger2
 public class EventPaiController {
 
