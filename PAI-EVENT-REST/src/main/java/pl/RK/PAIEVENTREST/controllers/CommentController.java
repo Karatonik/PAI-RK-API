@@ -8,6 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @RestController
 @RequestMapping("api/comm")
+@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
 @EnableSwagger2
 public class CommentController {
 

@@ -9,6 +9,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @RestController
 @RequestMapping("/api/user")
+@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
 @EnableSwagger2
 //http://localhost:8080/swagger-ui.html#/
 public class UserPaiController {
