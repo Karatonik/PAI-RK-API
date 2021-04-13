@@ -9,7 +9,6 @@ import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -22,17 +21,17 @@ public class EventPAI {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer eventID;
 
-    @Column(nullable = false)
+  //  @Column(nullable = false)
     String name;
 
 
-    @Column(nullable = false)
+   // @Column(nullable = false)
     String province;
 
-    @Column(nullable = false)
+   // @Column(nullable = false)
     String city;
 
-    @Column(nullable = false)
+   // @Column(nullable = false)
     String address;
 
     AccessPAI access;
@@ -40,8 +39,8 @@ public class EventPAI {
     @CreationTimestamp
     LocalDateTime dateOfCreate;
 
-    @Column(nullable = false)
-    LocalDateTime dateOfStarEvent;
+   // @Column(nullable = false)
+    LocalDateTime dateOfStartEvent;
 
     @OneToMany
     @JoinColumn(name ="userpai")
@@ -52,13 +51,13 @@ public class EventPAI {
     Set<UserPAI> userSet;
 
 
-    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStarEvent, Set<UserPAI> userSet) {
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, Set<UserPAI> userSet) {
         this.name = name;
         this.province = province;
         this.city = city;
         this.address = address;
         this.access = access;
-        this.dateOfStarEvent = dateOfStarEvent;
+        this.dateOfStartEvent = dateOfStartEvent;
         this.userSet = userSet;
     }
 
