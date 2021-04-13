@@ -21,17 +21,17 @@ public class EventPAI {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer eventID;
 
-  //  @Column(nullable = false)
+   @Column(nullable = false)
     String name;
 
 
-   // @Column(nullable = false)
+    @Column(nullable = false)
     String province;
 
-   // @Column(nullable = false)
+    @Column(nullable = false)
     String city;
 
-   // @Column(nullable = false)
+    @Column(nullable = false)
     String address;
 
     AccessPAI access;
@@ -39,7 +39,7 @@ public class EventPAI {
     @CreationTimestamp
     LocalDateTime dateOfCreate;
 
-   // @Column(nullable = false)
+    @Column(nullable = false)
     LocalDateTime dateOfStartEvent;
 
     @OneToMany
