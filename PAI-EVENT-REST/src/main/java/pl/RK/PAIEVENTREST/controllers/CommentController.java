@@ -18,17 +18,17 @@ public class CommentController {
         this.commentService = commentService;
     }
 
-    @PostMapping
-    public CommentDto addComment(String email, int eventId ,@RequestBody String text){
+    @PostMapping("/{email}/{eventId}")
+    public CommentDto addComment(@PathVariable String email,@PathVariable int eventId ,@RequestBody String text){
         return new CommentDto( commentService.set(email,eventId,text));
     }
 
-    @DeleteMapping
-    public boolean delete(int commentId){
+    @DeleteMapping("/{commentId}")
+    public boolean delete(@PathVariable int commentId){
         return  commentService.delete(commentId);    }
 
-    @PutMapping
-    public CommentDto update(int commentId ,String text){
+    @PutMapping("/{commentId}/{text}")
+    public CommentDto update(@PathVariable int commentId ,@PathVariable String text){
         return new CommentDto(commentService.update(commentId , text));
     }
 }

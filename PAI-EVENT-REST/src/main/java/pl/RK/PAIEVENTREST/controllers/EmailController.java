@@ -19,23 +19,23 @@ public class EmailController {
         this.emailService = emailService;
     }
 
-    @GetMapping("/standard")
-    public void sendMail(String to , String sub, @RequestBody String text , boolean isHtmlContent) throws MessagingException{
+    @GetMapping("/standard/{to}/{sub}/{isHtmlContent}")
+    public void sendMail(@PathVariable String to ,@PathVariable String sub, @RequestBody String text ,@PathVariable boolean isHtmlContent) throws MessagingException{
         emailService.sendMail(to,sub,text,isHtmlContent);
     }
 
-    @GetMapping("/reset")
-    public void sendRestPassword(String to) throws MessagingException{
+    @GetMapping("/reset/{to}")
+    public void sendRestPassword(@PathVariable String to) throws MessagingException{
         emailService.sendResetPassword(to);
     }
 
-    @GetMapping("/confirmation")
-    public void sendConfirmation(String to) throws MessagingException{
+    @GetMapping("/confirmation/{to}")
+    public void sendConfirmation(@PathVariable String to) throws MessagingException{
         emailService.sendConfirmation(to);
     }
 
-    @GetMapping("/delete")
-    public  void sendDelete(String to) throws MessagingException{
+    @GetMapping("/delete/{to}")
+    public  void sendDelete(@PathVariable String to) throws MessagingException{
         emailService.sendDelete(to);
     }
 

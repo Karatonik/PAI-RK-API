@@ -21,41 +21,40 @@ public class UserPaiController {
         this.userPaiService = userPaiService;
     }
 
-    @PutMapping("/confirmation")
-    public boolean confirmation(String key){
+    @PutMapping("/confirmation/{key}")
+    public boolean confirmation(@PathVariable String key){
         return userPaiService.confirmation(key);
     }
 
-    @PutMapping("/reset")
-    public UserPAIDto reset(String key){
+    @PutMapping("/reset/{key}")
+    public UserPAIDto reset(@PathVariable String key){
         return new UserPAIDto(userPaiService.resetPassword(key));
     }
 
-    //todo reset hasła vali
 
-    @PutMapping("/delete")
-    public boolean delete(String key){
+    @PutMapping("/delete/{key}")
+    public boolean delete(@PathVariable String key){
         return userPaiService.deleteWithKey(key);
     }
 
 
     //rejestracja
-    @PostMapping
-    public UserPAIDto set(String email,String password , String nick){
+    @PostMapping("{email}/{password}/{nick}")
+    public UserPAIDto set(@PathVariable String email,@PathVariable String password ,@PathVariable String nick){
         return new UserPAIDto(userPaiService.set(email,password,nick));
     }
 
-    @PostMapping("/rtje")
-    public boolean requestToJoinEvent(String email,int eventId){
+    @PostMapping("/rtje/{email}/{eventId}")
+    public boolean requestToJoinEvent(@PathVariable String email,@PathVariable int eventId){
         return userPaiService.requestToJoinEvent(email, eventId);
     }
 
-    @PutMapping("/accept")
-    public boolean acceptRequestToJoin(int participleId , String email){
+    @PutMapping("/accept/{participleId}/{email}")
+    public boolean acceptRequestToJoin(@PathVariable int participleId ,@PathVariable String email){
         return userPaiService.acceptParticipation(participleId,email);
     }
-    @GetMapping("/login")
-    public UserPAIDto login(String email , String password){
+    @GetMapping("/login/{email}/{password}")
+    public UserPAIDto login(@PathVariable String email ,@PathVariable String password){
         return new UserPAIDto(userPaiService.login(email,password));
     }
 }

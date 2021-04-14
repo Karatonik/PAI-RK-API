@@ -29,56 +29,56 @@ public class EventPaiController {
         this.eventPaiService = eventPaiService;
     }
 
-    @GetMapping("/comments")
-    public List<CommentDto> getAllComments(int eventId){
+    @GetMapping("/comments/{eventId}")
+    public List<CommentDto> getAllComments(@PathVariable int eventId){
         return eventPaiService.getAllComments(eventId).stream().map(CommentDto::new).collect(Collectors.toList());
     }
 
-    @PostMapping
-    public EventPAIDto addEvent(String name, String prov , String city , String address , AccessPAI accessPAI
-            , LocalDateTime dateOfStartEvent , String email){
+    @PostMapping("/{name}/{prov}/{city}/{address}/{accessPAI}/{dateOfStartEvent}/{email}")
+    public EventPAIDto addEvent(@PathVariable String name,@PathVariable String prov ,@PathVariable String city ,@PathVariable String address ,@PathVariable AccessPAI accessPAI
+            ,@PathVariable LocalDateTime dateOfStartEvent ,@PathVariable String email){
         return new EventPAIDto( eventPaiService.set(name,prov,city,address,accessPAI,dateOfStartEvent,email));
     }
 
-    @DeleteMapping
-    public boolean deleteEvent(int eventId){
+    @DeleteMapping("/{eventId}")
+    public boolean deleteEvent(@PathVariable int eventId){
         return  eventPaiService.delete(eventId);
     }
 
-    @GetMapping
-    public List<EventPAIDto> get(String name,String prov , String city ,String address){
+    @GetMapping("/{name}/{prov}/{city}/{address}")
+    public List<EventPAIDto> get(@PathVariable String name,@PathVariable String prov ,@PathVariable String city ,@PathVariable String address){
         return eventPaiService.get(name,prov,city,address).stream().map(EventPAIDto::new).collect(Collectors.toList());
     }
 
-    @GetMapping("/users")
-    public Set<UserPAIDto>getAllUsers(int eventId){
+    @GetMapping("/users/{eventId}")
+    public Set<UserPAIDto>getAllUsers(@PathVariable int eventId){
         return eventPaiService.getAllUsers(eventId).stream().map(UserPAIDto::new).collect(Collectors.toSet());
     }
 
-    @GetMapping("/admins")
-    public Set<UserPAIDto>getAllAdmins(int eventId){
+    @GetMapping("/admins/{eventId}")
+    public Set<UserPAIDto>getAllAdmins(@PathVariable int eventId){
         return eventPaiService.getAllAdmins(eventId).stream().map(UserPAIDto::new).collect(Collectors.toSet());
     }
 
-    @PutMapping("/changeAccess")
-    public boolean changeAccess(int eventId){
+    @PutMapping("/changeAccess/{eventId}")
+    public boolean changeAccess(@PathVariable int eventId){
         return eventPaiService.changeAccess(eventId);
     }
 
-    @PutMapping("/setAdmin")
-    public boolean setUserAsAdmin(String email , int eventId){
+    @PutMapping("/setAdmin/{email}/{eventId}")
+    public boolean setUserAsAdmin(@PathVariable String email , @PathVariable int eventId){
         return eventPaiService.setUserAsAdmin(email,eventId);
     }
 
     //dodanie do zapro
-    @PostMapping("/addUser")
-    public boolean addUser(String email,int eventId){
+    @PostMapping("/addUser/{email}/{eventId}")
+    public boolean addUser(@PathVariable String email,@PathVariable int eventId){
         return eventPaiService.addUser(email,eventId);
     }
 
     //akceptacja prośby o dołączenie
-    @PutMapping("/acceptPart")
-    public boolean acceptParticipation(int participationId , int eventId){
+    @PutMapping("/acceptPart/{participationId}/{eventId}")
+    public boolean acceptParticipation(@PathVariable int participationId ,@PathVariable int eventId){
         return  eventPaiService.acceptParticipation(participationId,eventId);
     }
 }
