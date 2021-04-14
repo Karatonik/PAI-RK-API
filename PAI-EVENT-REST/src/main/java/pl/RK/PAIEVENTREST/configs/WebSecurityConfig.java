@@ -22,8 +22,6 @@ import pl.RK.PAIEVENTREST.services.implementations.UserDetailsServiceImp;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
-        // securedEnabled = true,
-        // jsr250Enabled = true,
         prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 

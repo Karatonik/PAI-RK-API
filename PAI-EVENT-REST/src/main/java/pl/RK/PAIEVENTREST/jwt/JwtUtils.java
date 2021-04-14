@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
+import pl.RK.PAIEVENTREST.models.UserDetailsImp;
 import pl.RK.PAIEVENTREST.models.UserPAI;
 
 import java.util.Date;
@@ -21,10 +22,10 @@ public class JwtUtils {
 
     public String generateJwtToken(Authentication authentication) {
 
-        UserPAI userPAI = (UserPAI) authentication.getPrincipal();
+        UserDetailsImp userPrincipal = (UserDetailsImp) authentication.getPrincipal();
 
         return Jwts.builder()
-                .setSubject((userPAI.getEmail()))
+                .setSubject((userPrincipal.getEmail()))
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
