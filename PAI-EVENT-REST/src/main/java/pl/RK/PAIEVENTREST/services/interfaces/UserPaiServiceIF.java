@@ -17,6 +17,5 @@ public interface UserPaiServiceIF {
 
     boolean acceptParticipation(int participationId, String email);
 
-    UserPAI login(String email, String password);
-
+    UserPAI get(String email);
 }
