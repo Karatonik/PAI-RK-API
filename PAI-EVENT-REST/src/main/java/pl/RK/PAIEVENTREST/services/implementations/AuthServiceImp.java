@@ -5,24 +5,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.RK.PAIEVENTREST.jwt.JwtUtils;
 import pl.RK.PAIEVENTREST.models.UserDetailsImp;
 import pl.RK.PAIEVENTREST.models.UserPAI;
-import pl.RK.PAIEVENTREST.payload.request.LoginRequest;
-import pl.RK.PAIEVENTREST.payload.request.SignUpRequest;
-import pl.RK.PAIEVENTREST.payload.response.JwtResponse;
-import pl.RK.PAIEVENTREST.payload.response.MessageResponse;
+import pl.RK.PAIEVENTREST.models.payload.request.LoginRequest;
+import pl.RK.PAIEVENTREST.models.payload.request.SignUpRequest;
+import pl.RK.PAIEVENTREST.models.payload.response.JwtResponse;
+import pl.RK.PAIEVENTREST.models.payload.response.MessageResponse;
 import pl.RK.PAIEVENTREST.repositorys.UserPaiRepository;
 import pl.RK.PAIEVENTREST.services.interfaces.AuthServiceIF;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class AuthServiceImp implements AuthServiceIF {
@@ -58,9 +52,7 @@ public class AuthServiceImp implements AuthServiceIF {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 */
-        return ResponseEntity.ok(new JwtResponse(jwt,
-                userDetails.getNick(),
-                userDetails.getEmail(),userDetails.getUsername()));
+        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getNick(),userDetails.getEmail()));
     }
 
     @Override

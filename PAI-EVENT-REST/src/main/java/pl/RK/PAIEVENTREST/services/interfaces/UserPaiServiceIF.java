@@ -5,18 +5,18 @@ import pl.RK.PAIEVENTREST.models.UserPAI;
 public interface UserPaiServiceIF {
 
 
-    public boolean confirmation(String key);
+    boolean confirmation(String key);
 
-    public UserPAI resetPassword(String key);
+    UserPAI resetPassword(String key);
 
-    public boolean deleteWithKey(String key);
+    boolean deleteWithKey(String key);
 
-    public UserPAI set(String email,String password ,String nick);
+    UserPAI set(String email, String password, String nick);
 
-    public boolean requestToJoinEvent(String email,int eventId);
+    boolean requestToJoinEvent(String email, int eventId);
 
-    public boolean acceptParticipation(int participationId , String email);
+    boolean acceptParticipation(int participationId, String email);
 
-    public UserPAI login(String email , String password);
+    UserPAI login(String email, String password);
 
 }

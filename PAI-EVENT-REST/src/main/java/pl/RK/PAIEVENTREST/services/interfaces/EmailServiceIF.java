@@ -5,13 +5,12 @@ import javax.mail.MessagingException;
 public interface EmailServiceIF {
 
 
+    void sendConfirmation(String to) throws MessagingException;
 
-    public void sendConfirmation(String to) throws MessagingException;
+    void sendResetPassword(String to) throws MessagingException;
 
-    public void sendResetPassword(String to) throws MessagingException;
+    void sendDelete(String to) throws MessagingException;
 
-    public void sendDelete(String to)throws MessagingException;
-
-    public void sendMail(String to ,String subject ,String text ,boolean isHtmlContent) throws MessagingException;
+    void sendMail(String to, String subject, String text, boolean isHtmlContent) throws MessagingException;
 
 }

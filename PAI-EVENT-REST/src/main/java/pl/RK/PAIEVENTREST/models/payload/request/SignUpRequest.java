@@ -1,6 +1,5 @@
-package pl.RK.PAIEVENTREST.payload.request;
+package pl.RK.PAIEVENTREST.models.payload.request;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

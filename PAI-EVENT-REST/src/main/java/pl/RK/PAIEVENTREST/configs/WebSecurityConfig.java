@@ -14,14 +14,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import pl.RK.PAIEVENTREST.jwt.AuthEntryPointJWT;
 import pl.RK.PAIEVENTREST.jwt.AuthTokenFilter;
 import pl.RK.PAIEVENTREST.services.implementations.UserDetailsServiceImp;
-import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
 
 @Configuration
 
@@ -63,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/swagger-ui.html",
                 "/webjars/**");
     }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
@@ -70,17 +66,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/test/**"
-                        ,"/api/comm**"
-                        ,"/api/mail**"
-                        ,"/api/event**"
-                        ,"/api/parti**"
-                        ,"api/user**").permitAll()
+                        , "/api/comm**"
+                        , "/api/mail**"
+                        , "/api/event**"
+                        , "/api/parti**"
+                        , "api/user**").permitAll()
                 .anyRequest().authenticated();
 
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
-
 
 
     @Bean

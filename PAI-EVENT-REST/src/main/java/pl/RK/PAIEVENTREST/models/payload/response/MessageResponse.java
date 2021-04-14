@@ -1,4 +1,4 @@
-package pl.RK.PAIEVENTREST.payload.response;
+package pl.RK.PAIEVENTREST.models.payload.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

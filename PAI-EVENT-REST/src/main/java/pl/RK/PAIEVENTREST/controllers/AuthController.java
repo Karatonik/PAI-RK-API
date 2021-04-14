@@ -1,13 +1,10 @@
 package pl.RK.PAIEVENTREST.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
-import pl.RK.PAIEVENTREST.payload.request.LoginRequest;
-import pl.RK.PAIEVENTREST.payload.request.SignUpRequest;
+import pl.RK.PAIEVENTREST.models.payload.request.LoginRequest;
+import pl.RK.PAIEVENTREST.models.payload.request.SignUpRequest;
 import pl.RK.PAIEVENTREST.services.implementations.AuthServiceImp;
-import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
 
 import javax.validation.Valid;
 
@@ -23,11 +20,12 @@ public class AuthController {
 
     @PostMapping("/singin")
     public ResponseEntity<?> authenticate(@Valid @RequestBody LoginRequest loginRequest) {
-        return  authenticationManager.authenticate(loginRequest);
+        return authenticationManager.authenticate(loginRequest);
     }
+
     @PostMapping("singup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
-    return  authenticationManager.register(signUpRequest);
+        return authenticationManager.register(signUpRequest);
     }
 
 }

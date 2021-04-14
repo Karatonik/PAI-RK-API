@@ -1,4 +1,4 @@
-package pl.RK.PAIEVENTREST.payload.response;
+package pl.RK.PAIEVENTREST.models.payload.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,4 +14,10 @@ public class JwtResponse {
     private String type = "Bearer";
     private String nick;
     private String email;
+
+    public JwtResponse(String token, String nick, String email) {
+        this.token = token;
+        this.nick = nick;
+        this.email = email;
+    }
 }

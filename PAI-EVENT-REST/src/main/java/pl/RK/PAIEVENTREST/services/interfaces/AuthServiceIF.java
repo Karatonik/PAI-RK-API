@@ -1,11 +1,11 @@
 package pl.RK.PAIEVENTREST.services.interfaces;
 
 import org.springframework.http.ResponseEntity;
-import pl.RK.PAIEVENTREST.payload.request.LoginRequest;
-import pl.RK.PAIEVENTREST.payload.request.SignUpRequest;
+import pl.RK.PAIEVENTREST.models.payload.request.LoginRequest;
+import pl.RK.PAIEVENTREST.models.payload.request.SignUpRequest;
 
 public interface AuthServiceIF {
-    public ResponseEntity<?> authenticate(LoginRequest loginRequest);
+    ResponseEntity<?> authenticate(LoginRequest loginRequest);
 
-    public ResponseEntity<?> register(SignUpRequest signUpRequest);
+    ResponseEntity<?> register(SignUpRequest signUpRequest);
 }
