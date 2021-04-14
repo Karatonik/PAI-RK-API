@@ -19,5 +19,4 @@ public interface UserPaiServiceIF {
 
     public UserPAI login(String email , String password);
 
-
 }
