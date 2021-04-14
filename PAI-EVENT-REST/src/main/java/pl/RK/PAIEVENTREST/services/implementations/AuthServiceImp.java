@@ -63,8 +63,7 @@ public class AuthServiceImp implements AuthServiceIF {
                     .body(new MessageResponse("Error: Email is already taken!"));
         }
         // Create new user's account
-        UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),signUpRequest.getNick()
-                ,encoder.encode(signUpRequest.getPassword()));
+        UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
         userPaiRepository.save(userPAI);
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
