@@ -27,7 +27,7 @@ public class UserPaiController {
     }
 
     //zmiana hasła , potrzebny klucz z maila
-    @PutMapping("/pwd/{key}/{newPwd}")
+    @PutMapping("/pwd/{key}/{pwd}")
     public Boolean resetPwd(@PathVariable String key,@PathVariable String pwd){
         return userPaiService.changePassword(key, pwd);
     }
