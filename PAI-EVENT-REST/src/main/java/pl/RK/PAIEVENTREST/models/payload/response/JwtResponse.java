@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class JwtResponse {
     private String token;
-    private String type = "Bearer";
+    private final String type = "Bearer";
     private String nick;
     private String email;
 
@@ -19,5 +19,6 @@ public class JwtResponse {
         this.token = token;
         this.nick = nick;
         this.email = email;
+
     }
 }
