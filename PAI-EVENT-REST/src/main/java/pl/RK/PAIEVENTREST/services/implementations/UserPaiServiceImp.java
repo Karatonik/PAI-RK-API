@@ -41,12 +41,21 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         return false;
     }
 
-    //Dostajesz dostęp do zmiany hasła (do uzytkownika)
+
     @Override
-    public UserPAI resetPassword(String key) {
-        Optional<UserPAI> optionalUserPAI = userPaiRepository.findByUserKey(key);
-        return optionalUserPAI.orElse(null);//todo
+    public boolean changePassword(String key, String newPassword) {
+        Optional<UserPAI>optionalUserPAI = userPaiRepository.findByUserKey(key);
+        if(optionalUserPAI.isPresent()){
+            UserPAI userPAI = optionalUserPAI.get();
+            userPAI.setPassword(newPassword);
+            userPaiRepository.save(userPAI);
+            return  true;
+        }
+        return false;
     }
+
+    //Dostajesz dostęp do zmiany hasła (do uzytkownika)
+
 
     //usuwanie po kluczu
     @Override

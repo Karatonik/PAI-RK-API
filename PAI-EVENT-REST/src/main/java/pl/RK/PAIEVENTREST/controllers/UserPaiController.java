@@ -26,10 +26,12 @@ public class UserPaiController {
         return userPaiService.confirmation(key);
     }
 
-    @PutMapping("/reset/{key}")
-    public UserPAIDto reset(@PathVariable String key){
-        return new UserPAIDto(userPaiService.resetPassword(key));
+    //zmiana hasła , potrzebny klucz z maila
+    @PutMapping("/pwd/{key}/{newPwd}")
+    public Boolean resetPwd(@PathVariable String key,@PathVariable String pwd){
+        return userPaiService.changePassword(key, pwd);
     }
+
 
 
     @PutMapping("/delete/{key}")

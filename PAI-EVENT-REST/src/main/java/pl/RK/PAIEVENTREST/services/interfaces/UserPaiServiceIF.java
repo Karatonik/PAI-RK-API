@@ -7,7 +7,8 @@ public interface UserPaiServiceIF {
 
     boolean confirmation(String key);
 
-    UserPAI resetPassword(String key);
+
+    boolean changePassword(String key , String newPassword);
 
     boolean deleteWithKey(String key);
 
