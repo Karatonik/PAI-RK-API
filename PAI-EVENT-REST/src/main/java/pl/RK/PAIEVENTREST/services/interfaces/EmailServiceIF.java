@@ -7,7 +7,7 @@ public interface EmailServiceIF {
 
     void sendConfirmation(String to) throws MessagingException;
 
-    void sendResetPassword(String to) throws MessagingException;
+    boolean sendResetPassword(String to) throws MessagingException;
 
     void sendDelete(String to) throws MessagingException;
 
