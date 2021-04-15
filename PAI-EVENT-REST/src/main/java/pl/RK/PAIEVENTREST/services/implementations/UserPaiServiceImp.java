@@ -1,6 +1,8 @@
 package pl.RK.PAIEVENTREST.services.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.RK.PAIEVENTREST.models.EventPAI;
 import pl.RK.PAIEVENTREST.models.Participation;
@@ -20,12 +22,17 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     UserPaiRepository userPaiRepository;
     EventPaiRepository eventPaiRepository;
     ParticipationRepository participationRepository;
+    PasswordEncoder encoder;
+
 
     @Autowired
     public UserPaiServiceImp(UserPaiRepository userPaiRepository
             ,EventPaiRepository eventPaiRepository
-            ,ParticipationRepository participationRepository) {
+            ,ParticipationRepository participationRepository, PasswordEncoder encoder) {
         this.userPaiRepository = userPaiRepository;
+        this.eventPaiRepository=eventPaiRepository;
+        this.participationRepository=participationRepository;
+        this.encoder = encoder;
     }
 
     //potwierdzenie
@@ -47,14 +54,13 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         Optional<UserPAI>optionalUserPAI = userPaiRepository.findByUserKey(key);
         if(optionalUserPAI.isPresent()){
             UserPAI userPAI = optionalUserPAI.get();
-            userPAI.setPassword(newPassword);
+            userPAI.setPassword(encoder.encode(newPassword));
             userPaiRepository.save(userPAI);
             return  true;
         }
         return false;
     }
 
-    //Dostajesz dostęp do zmiany hasła (do uzytkownika)
 
 
     //usuwanie po kluczu
