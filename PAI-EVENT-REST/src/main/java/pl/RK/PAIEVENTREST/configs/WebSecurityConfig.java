@@ -54,7 +54,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/swagger-resources/**",
                 "/configuration/security",
                 "/swagger-ui.html",
-                "/webjars/**");
+                "/webjars/**",
+                "/api/mail/**");
     }
 
     @Override
@@ -65,7 +66,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/test/**"
                         , "/api/comm**"
-                        , "/api/mail**"
                         , "/api/event**"
                         , "/api/parti**"
                         , "api/user**").permitAll()
