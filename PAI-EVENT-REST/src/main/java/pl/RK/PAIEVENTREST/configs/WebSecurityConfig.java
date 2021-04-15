@@ -55,7 +55,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/configuration/security",
                 "/swagger-ui.html",
                 "/webjars/**",
-                "/api/mail/**");
+                "/api/mail/**",
+                "/api/user/pwd/**");
     }
 
     @Override
