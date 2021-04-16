@@ -54,6 +54,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         Optional<UserPAI>optionalUserPAI = userPaiRepository.findByUserKey(key);
         if(optionalUserPAI.isPresent()){
             UserPAI userPAI = optionalUserPAI.get();
+            userPAI.getNewKey();
             userPAI.setPassword(encoder.encode(newPassword));
             userPaiRepository.save(userPAI);
             return  true;
