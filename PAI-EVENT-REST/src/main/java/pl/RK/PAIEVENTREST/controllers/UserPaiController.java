@@ -26,10 +26,12 @@ public class UserPaiController {
         return userPaiService.confirmation(key);
     }
 
-    @PutMapping("/reset/{key}")
-    public UserPAIDto reset(@PathVariable String key){
-        return new UserPAIDto(userPaiService.resetPassword(key));
+    //zmiana hasła , potrzebny klucz z maila
+    @PutMapping("/pwd/{key}/{pwd}")
+    public Boolean resetPwd(@PathVariable String key,@PathVariable String pwd){
+        return userPaiService.changePassword(key, pwd);
     }
+
 
 
     @PutMapping("/delete/{key}")
@@ -53,8 +55,8 @@ public class UserPaiController {
     public boolean acceptRequestToJoin(@PathVariable int participleId ,@PathVariable String email){
         return userPaiService.acceptParticipation(participleId,email);
     }
-    @GetMapping("/login/{email}/{password}")
-    public UserPAIDto login(@PathVariable String email ,@PathVariable String password){
-        return new UserPAIDto(userPaiService.login(email,password));
+    @GetMapping("/{email}")
+    public UserPAIDto get(@PathVariable String email){
+        return new UserPAIDto(userPaiService.get(email));
     }
 }

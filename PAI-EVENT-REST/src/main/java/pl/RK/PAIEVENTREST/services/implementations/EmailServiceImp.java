@@ -55,7 +55,7 @@ public class EmailServiceImp implements EmailServiceIF {
     }
 
     @Override
-    public void sendResetPassword(String to) throws MessagingException {
+    public boolean sendResetPassword(String to) throws MessagingException {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(to);
         if (optionalUserPAI.isPresent()) {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -70,7 +70,9 @@ public class EmailServiceImp implements EmailServiceIF {
 
             mimeMessageHelper.setText(resetMessage + userPAI.getUserKey(), true);
             javaMailSender.send(mimeMessage);
+            return true;
         }
+        return  false;
     }
 
     @Override

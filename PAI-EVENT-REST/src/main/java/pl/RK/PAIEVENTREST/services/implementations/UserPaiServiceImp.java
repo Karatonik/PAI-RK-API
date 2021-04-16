@@ -1,6 +1,8 @@
 package pl.RK.PAIEVENTREST.services.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.RK.PAIEVENTREST.models.EventPAI;
 import pl.RK.PAIEVENTREST.models.Participation;
@@ -20,12 +22,17 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     UserPaiRepository userPaiRepository;
     EventPaiRepository eventPaiRepository;
     ParticipationRepository participationRepository;
+    PasswordEncoder encoder;
+
 
     @Autowired
     public UserPaiServiceImp(UserPaiRepository userPaiRepository
             ,EventPaiRepository eventPaiRepository
-            ,ParticipationRepository participationRepository) {
+            ,ParticipationRepository participationRepository, PasswordEncoder encoder) {
         this.userPaiRepository = userPaiRepository;
+        this.eventPaiRepository=eventPaiRepository;
+        this.participationRepository=participationRepository;
+        this.encoder = encoder;
     }
 
     //potwierdzenie
@@ -41,12 +48,21 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         return false;
     }
 
-    //Dostajesz dostęp do zmiany hasła (do uzytkownika)
+
     @Override
-    public UserPAI resetPassword(String key) {
-        Optional<UserPAI> optionalUserPAI = userPaiRepository.findByUserKey(key);
-        return optionalUserPAI.orElse(null);//todo
+    public boolean changePassword(String key, String newPassword) {
+        Optional<UserPAI>optionalUserPAI = userPaiRepository.findByUserKey(key);
+        if(optionalUserPAI.isPresent()){
+            UserPAI userPAI = optionalUserPAI.get();
+            userPAI.getNewKey();
+            userPAI.setPassword(encoder.encode(newPassword));
+            userPaiRepository.save(userPAI);
+            return  true;
+        }
+        return false;
     }
+
+
 
     //usuwanie po kluczu
     @Override
@@ -113,10 +129,12 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     }
 
     @Override
-    public UserPAI login(String email, String password) {
-        Optional<UserPAI> optionalUserPAI = userPaiRepository.findByEmailAndPassword(email,password);
+    public UserPAI get(String email) {
+     Optional<UserPAI> optionalUserPAI= userPaiRepository.findById(email);
         return optionalUserPAI.orElse(null);
     }
+
+
 
 
 }

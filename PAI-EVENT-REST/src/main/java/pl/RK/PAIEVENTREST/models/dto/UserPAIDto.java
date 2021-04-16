@@ -19,9 +19,11 @@ public class UserPAIDto {
     String email;
 
     String nick;
+    boolean activated;
 
     public UserPAIDto(UserPAI userPAI) {
         this.email = userPAI.getEmail();
         this.nick = userPAI.getNick();
+        this.activated=userPAI.isActivated();
     }
 }

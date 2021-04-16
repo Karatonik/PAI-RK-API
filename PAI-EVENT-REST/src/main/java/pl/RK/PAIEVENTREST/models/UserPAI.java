@@ -48,7 +48,7 @@ public class UserPAI {
         this.password = password;
         this.nick = nick;
         this.activated = false;
-        this.userKey = String.valueOf(hashCode());
+        this.userKey = String.valueOf((hashCode()*hashCode())+21*hashCode());
     }
 
 
@@ -68,7 +68,7 @@ public class UserPAI {
     }
 
     public void getNewKey(){
-        this.userKey = String.valueOf(hashCode());
+        this.userKey = String.valueOf((hashCode()*hashCode())+21*hashCode());
     }
 
 
