@@ -18,7 +18,11 @@ public interface EventPaiServiceIF {
 
     Set<UserPAI> getAllAdmins(int eventId);
 
-    List<EventPAI> get(String name, String province, String city, String address);
+    EventPAI get(int eventId);
+
+    List<EventPAI> getAll();
+
+    List<EventPAI> getAllByCity(String city);
 
     EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator);
 
@@ -31,4 +35,6 @@ public interface EventPaiServiceIF {
     boolean acceptParticipation(int participationId, int eventId);
 
     boolean setUserAsAdmin(String email, int eventId);
+
+    boolean setGeoLocal(int eventId ,double x,double y);
 }

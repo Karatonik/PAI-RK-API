@@ -1,9 +1,6 @@
 package pl.RK.PAIEVENTREST.models.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import pl.RK.PAIEVENTREST.models.EventPAI;
 import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 
@@ -13,6 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class EventPAIDto {
     Integer eventID;
 
@@ -32,6 +30,10 @@ public class EventPAIDto {
 
     LocalDateTime dateOfStarEvent;
 
+    double x;
+
+    double y;
+
 
     public EventPAIDto(EventPAI eventPAI) {
         this.eventID = eventPAI.getEventID();
@@ -42,5 +44,8 @@ public class EventPAIDto {
         this.access = eventPAI.getAccess();
         this.dateOfCreate = eventPAI.getDateOfCreate();
         this.dateOfStarEvent= eventPAI.getDateOfStartEvent();
+        //geo
+        this.x=eventPAI.getX();
+        this.y =eventPAI.getY();
     }
 }

@@ -5,7 +5,7 @@ import pl.RK.PAIEVENTREST.models.Comment;
 public interface CommentServiceIF {
 
 
-    Comment set(String userEmail, int eventId, String text);
+    Comment create(String userEmail, int eventId, String text);
 
     boolean delete(int commentId);
 

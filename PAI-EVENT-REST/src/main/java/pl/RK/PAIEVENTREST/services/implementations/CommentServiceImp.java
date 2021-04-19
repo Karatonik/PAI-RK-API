@@ -29,13 +29,13 @@ public class CommentServiceImp implements CommentServiceIF {
 
 
     @Override
-    public Comment set(String userEmail, int eventId, String text) {
+    public Comment create(String userEmail, int eventId, String text) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(userEmail);
         Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
         if(optionalUserPAI.isPresent()&&optionalEventPAI.isPresent()) {
             return commentRepository.save(new Comment(text, optionalEventPAI.get(), optionalUserPAI.get()));
         }
-        return null;
+        return new Comment();
     }
 
     @Override

@@ -1,14 +1,12 @@
 package pl.RK.PAIEVENTREST.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -16,6 +14,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Entity
+@ToString
 public class EventPAI {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +41,13 @@ public class EventPAI {
     @Column(nullable = false)
     LocalDateTime dateOfStartEvent;
 
+    //geo x
+    @Column(columnDefinition = "double default 0")
+    double x;
+    //geo y
+    @Column(columnDefinition = "double default 0")
+    double y;
+
     @OneToMany
     @JoinColumn(name ="userpai")
     Set<UserPAI> OrganizerSet;
@@ -59,6 +65,17 @@ public class EventPAI {
         this.access = access;
         this.dateOfStartEvent = dateOfStartEvent;
         this.userSet = userSet;
+    }
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, UserPAI organizer) {
+        this.name = name;
+        this.province = province;
+        this.city = city;
+        this.address = address;
+        this.access = access;
+        this.dateOfStartEvent = dateOfStartEvent;
+        this.userSet = new HashSet<>();
+        this.OrganizerSet = new HashSet<>();
+        this.OrganizerSet.add(organizer);
     }
 
 
