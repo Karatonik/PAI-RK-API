@@ -52,9 +52,22 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
     }
 
     @Override
-    public List<EventPAI> get(String name, String province, String city, String address) {
-        return eventPaiRepository.findByNameOrProvinceOrCityOrAddress(name, province,city,address);
+    public EventPAI get(int eventId) {
+        Optional<EventPAI>optionalEventPAI = eventPaiRepository.findById(eventId);
+        return optionalEventPAI.orElse(null);
+
     }
+
+    @Override
+    public List<EventPAI> getAll() {
+        return eventPaiRepository.findAll();
+    }
+
+    @Override
+    public List<EventPAI> getAllByCity(String city) {
+        return eventPaiRepository.findAllByCity(city);
+    }
+
     @Override
     public EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(emailOfCreator);
@@ -163,6 +176,23 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
               return true;
           }
           return  false;
+        }
+        return false;
+    }
+
+
+
+
+    //uzupełnienie geolokalizacji
+    @Override
+    public boolean setGeoLocal(int eventId, double x, double y) {
+        Optional<EventPAI> optionalEventPAI= eventPaiRepository.findById(eventId);
+        if(optionalEventPAI.isPresent()){
+            EventPAI eventPAI = optionalEventPAI.get();
+            eventPAI.setX(x);
+            eventPAI.setY(y);
+            eventPaiRepository.save(eventPAI);
+            return true;
         }
         return false;
     }

@@ -2,7 +2,6 @@ package pl.RK.PAIEVENTREST.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.RK.PAIEVENTREST.models.UserPAI;
 import pl.RK.PAIEVENTREST.models.dto.UserPAIDto;
 import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -34,7 +33,7 @@ public class UserPaiController {
 
 
 
-    @PutMapping("/delete/{key}")
+    @DeleteMapping("/delete/{key}")
     public boolean delete(@PathVariable String key){
         return userPaiService.deleteWithKey(key);
     }

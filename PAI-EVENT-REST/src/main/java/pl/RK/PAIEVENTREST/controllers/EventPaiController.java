@@ -1,7 +1,6 @@
 package pl.RK.PAIEVENTREST.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import pl.RK.PAIEVENTREST.models.dto.CommentDto;
 import pl.RK.PAIEVENTREST.models.dto.EventPAIDto;
@@ -11,7 +10,6 @@ import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -35,7 +33,8 @@ public class EventPaiController {
     }
 
     @PostMapping("/{name}/{prov}/{city}/{address}/{accessPAI}/{dateOfStartEvent}/{email}")
-    public EventPAIDto addEvent(@PathVariable String name,@PathVariable String prov ,@PathVariable String city ,@PathVariable String address ,@PathVariable AccessPAI accessPAI
+    public EventPAIDto addEvent(@PathVariable String name,@PathVariable String prov ,@PathVariable String city
+            ,@PathVariable String address ,@PathVariable AccessPAI accessPAI
             ,@PathVariable LocalDateTime dateOfStartEvent ,@PathVariable String email){
         return new EventPAIDto( eventPaiService.set(name,prov,city,address,accessPAI,dateOfStartEvent,email));
     }
@@ -45,9 +44,13 @@ public class EventPaiController {
         return  eventPaiService.delete(eventId);
     }
 
-    @GetMapping("/{name}/{prov}/{city}/{address}")
-    public List<EventPAIDto> get(@PathVariable String name,@PathVariable String prov ,@PathVariable String city ,@PathVariable String address){
-        return eventPaiService.get(name,prov,city,address).stream().map(EventPAIDto::new).collect(Collectors.toList());
+    @GetMapping("/{eventId}")
+    public EventPAIDto get(@PathVariable int eventId){
+        return  new EventPAIDto( eventPaiService.get(eventId));
+    }
+    @GetMapping
+    public List<EventPAIDto> getAll(){
+        return  eventPaiService.getAll().stream().parallel().map(EventPAIDto::new).collect(Collectors.toList());
     }
 
     @GetMapping("/users/{eventId}")
@@ -80,5 +83,17 @@ public class EventPaiController {
     @PutMapping("/acceptPart/{participationId}/{eventId}")
     public boolean acceptParticipation(@PathVariable int participationId ,@PathVariable int eventId){
         return  eventPaiService.acceptParticipation(participationId,eventId);
+    }
+
+    //uzupełnienie geolokalizacji
+    @PutMapping("/geo/{eventId}/{x}/{y}")
+    public boolean setGeo(@PathVariable int eventId,@PathVariable double x,@PathVariable double y){
+        return eventPaiService.setGeoLocal(eventId,x,y);
+    }
+
+    @GetMapping("/city/{city}")
+    public List<EventPAIDto> findAllByCity(@PathVariable String city){
+        return  eventPaiService.getAllByCity(city).stream().parallel()
+                .map(EventPAIDto::new).collect(Collectors.toList());
     }
 }
