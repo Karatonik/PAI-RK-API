@@ -107,8 +107,30 @@ public class UserPaiControllerTest {
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("test@test.com")));
     }
+   /* @Test
+    public void getAllMyEventWhereIMUserTest() throws Exception{
+        event.setEventID(1);
+        List<EventPAI> eventPAIList = new ArrayList<>();
+        eventPAIList.add(event);
+       when(userPaiService.getAllMyEventWhereIMUser(anyString())).thenReturn(eventPAIList);
 
+        mvc.perform(get(apiPath + "/events/user/"+user.getEmail())
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk());
+               // .andExpect(content().string(containsString("testEvent")));
+    }
+    @Test
+    public void getAllMyEventWhereIMAdminTest() throws Exception{
+        event.setEventID(1);
+        List<EventPAI> eventPAIList = new ArrayList<>();
+        eventPAIList.add(event);
+        when(userPaiService.getAllMyEventWhereIMAdmin(anyString())).thenReturn(eventPAIList);
 
+        mvc.perform(get(apiPath + "/events/admin/"+user.getEmail())
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("testEvent")));
+    }*/
 
 
 

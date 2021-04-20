@@ -1,9 +1,6 @@
 package pl.RK.PAIEVENTREST.services.interfaces;
 
-import pl.RK.PAIEVENTREST.models.EventPAI;
 import pl.RK.PAIEVENTREST.models.UserPAI;
-
-import java.util.List;
 
 public interface UserPaiServiceIF {
 
@@ -24,8 +21,8 @@ public interface UserPaiServiceIF {
     UserPAI get(String email);
 
 
-    List<EventPAI> getAllMyEventWhereIMAdmin(String email);
-    List<EventPAI> getAllMyEventWhereIMUser (String email);
+   // List<EventPAI> getAllMyEventWhereIMAdmin(String email);
+    //List<EventPAI> getAllMyEventWhereIMUser (String email);
 
 
 }

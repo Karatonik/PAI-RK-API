@@ -12,8 +12,6 @@ import pl.RK.PAIEVENTREST.repositorys.ParticipationRepository;
 import pl.RK.PAIEVENTREST.repositorys.UserPaiRepository;
 import pl.RK.PAIEVENTREST.services.interfaces.UserPaiServiceIF;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -135,7 +133,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         return optionalUserPAI.orElse(null);
     }
 
-    @Override
+   /* @Override
     public List<EventPAI> getAllMyEventWhereIMAdmin(String email) {
         List<EventPAI> eventPAIList= new ArrayList<>();
         Optional<UserPAI>optionalUserPAI = userPaiRepository.findByUserKey(email);
@@ -153,7 +151,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
             return eventPaiRepository.findAllByUserSetIsContaining(optionalUserPAI.get());
         }
         return eventPAIList;
-    }
+    }*/
 
 
 }
