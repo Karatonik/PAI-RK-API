@@ -17,6 +17,8 @@ import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.core.StringContains.containsString;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -107,7 +109,7 @@ public class UserPaiControllerTest {
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("test@test.com")));
     }
-   /* @Test
+    @Test
     public void getAllMyEventWhereIMUserTest() throws Exception{
         event.setEventID(1);
         List<EventPAI> eventPAIList = new ArrayList<>();
@@ -116,8 +118,8 @@ public class UserPaiControllerTest {
 
         mvc.perform(get(apiPath + "/events/user/"+user.getEmail())
                 .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
-                .andDo(print()).andExpect(status().isOk());
-               // .andExpect(content().string(containsString("testEvent")));
+                .andDo(print()).andExpect(status().isOk())
+               .andExpect(content().string(containsString("testEvent")));
     }
     @Test
     public void getAllMyEventWhereIMAdminTest() throws Exception{
@@ -130,7 +132,7 @@ public class UserPaiControllerTest {
                 .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("testEvent")));
-    }*/
+    }
 
 
 
