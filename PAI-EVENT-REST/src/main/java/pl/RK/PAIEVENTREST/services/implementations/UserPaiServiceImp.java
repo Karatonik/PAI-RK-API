@@ -1,7 +1,6 @@
 package pl.RK.PAIEVENTREST.services.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.RK.PAIEVENTREST.models.EventPAI;
@@ -13,6 +12,8 @@ import pl.RK.PAIEVENTREST.repositorys.ParticipationRepository;
 import pl.RK.PAIEVENTREST.repositorys.UserPaiRepository;
 import pl.RK.PAIEVENTREST.services.interfaces.UserPaiServiceIF;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -134,7 +135,25 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         return optionalUserPAI.orElse(null);
     }
 
+    @Override
+    public List<EventPAI> getAllMyEventWhereIMAdmin(String email) {
+        List<EventPAI> eventPAIList= new ArrayList<>();
+        Optional<UserPAI>optionalUserPAI = userPaiRepository.findByUserKey(email);
+        if(optionalUserPAI.isPresent()){
+            return eventPaiRepository.findAllByOrganizerSetIsContaining(optionalUserPAI.get());
+        }
+        return eventPAIList;
+    }
 
+    @Override
+    public List<EventPAI> getAllMyEventWhereIMUser(String email) {
+        List<EventPAI> eventPAIList= new ArrayList<>();
+        Optional<UserPAI>optionalUserPAI = userPaiRepository.findByUserKey(email);
+        if(optionalUserPAI.isPresent()){
+            return eventPaiRepository.findAllByUserSetIsContaining(optionalUserPAI.get());
+        }
+        return eventPAIList;
+    }
 
 
 }
