@@ -6,6 +6,7 @@ import pl.RK.PAIEVENTREST.models.EventPAI;
 import pl.RK.PAIEVENTREST.models.Participation;
 import pl.RK.PAIEVENTREST.models.UserPAI;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public interface ParticipationRepository extends JpaRepository<Participation , I
 
     public  Set<Participation> findByEventPAI(EventPAI eventPAI);
 
-    public Set<Participation> findByUserPAI(UserPAI userPAI);
+    public List<Participation> findByUserPAI(UserPAI userPAI);
 
     public Optional<Participation> findByUserPAIAndEventPAI(UserPAI userPAI, EventPAI eventPAI);
 

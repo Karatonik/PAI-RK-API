@@ -11,6 +11,7 @@ import pl.RK.PAIEVENTREST.repositorys.ParticipationRepository;
 import pl.RK.PAIEVENTREST.repositorys.UserPaiRepository;
 import pl.RK.PAIEVENTREST.services.interfaces.ParticipationServiceIF;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -33,10 +34,10 @@ public class ParticipationServiceImp implements ParticipationServiceIF {
 
 
     @Override
-    public Set<Participation> userParticipationSet(String email) {
+    public List<Participation> userParticipationSet(String email) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(email);
         return optionalUserPAI.map(userPAI -> participationRepository.findByUserPAI(userPAI)
-                .stream().filter(v -> v.getRequest().equals(RequestFrom.User)).collect(Collectors.toSet())).orElse(null);
+                .stream().filter(v -> v.getRequest().equals(RequestFrom.User)).collect(Collectors.toList())).orElse(null);
     }
 
     @Override

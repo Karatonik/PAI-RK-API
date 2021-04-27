@@ -6,6 +6,7 @@ import pl.RK.PAIEVENTREST.models.dto.ParticipationDto;
 import pl.RK.PAIEVENTREST.services.implementations.ParticipationServiceImp;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -22,8 +23,8 @@ public class ParticipationController {
     }
 
     @GetMapping("/user/{email}")
-    public Set<ParticipationDto> getUserParticipation(@PathVariable String email){
-        return participationService.userParticipationSet(email).stream().map(ParticipationDto::new).collect(Collectors.toSet());
+    public List<ParticipationDto> getUserParticipation(@PathVariable String email){
+        return participationService.userParticipationSet(email).stream().map(ParticipationDto::new).collect(Collectors.toList());
     }
 
     @GetMapping("/event/{eventId}")

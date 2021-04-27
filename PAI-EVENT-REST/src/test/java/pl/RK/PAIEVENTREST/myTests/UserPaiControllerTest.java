@@ -81,14 +81,14 @@ public class UserPaiControllerTest {
                 .andExpect(content().string(containsString("test@test.com")));
     }
 
-    @Test
-    public void rtjeTest() throws Exception{
-    when(userPaiService.requestToJoinEvent(anyString(),anyInt())).thenReturn(true);
-        mvc.perform(post(apiPath + "/rtje/"+user.getEmail()+"/1")
-                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("true")));
-    }
+//    @Test
+//    public void rtjeTest() throws Exception{
+//    when(userPaiService.requestToJoinEvent(anyString(),anyInt())).thenReturn(true);
+//        mvc.perform(post(apiPath + "/rtje/"+user.getEmail()+"/1")
+//                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+//                .andDo(print()).andExpect(status().isOk())
+//                .andExpect(content().string(containsString("true")));
+//    }
 
     @Test
     public void acceptRequestToJoinTest() throws Exception{

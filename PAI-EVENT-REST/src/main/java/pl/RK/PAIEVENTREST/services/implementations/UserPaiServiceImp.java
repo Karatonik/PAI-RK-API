@@ -86,7 +86,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     }
 
     @Override
-    public boolean requestToJoinEvent(String email, int eventId) {
+    public Participation requestToJoinEvent(String email, int eventId) {
         Optional<EventPAI>optionalEventPAI =eventPaiRepository.findById(eventId);
         Optional<UserPAI>optionalUserPAI = userPaiRepository.findById(email);
 
@@ -96,11 +96,12 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
                 //sprawdzam czy nie ma takiego zaproszenia
             if(!participationRepository.findByUserPAIAndEventPAI(userPAI,eventPAI).isPresent()){
 
-                participationRepository.save(new Participation(RequestFrom.User,userPAI,eventPAI));
-                return  true;
+                return participationRepository.save(new Participation(RequestFrom.User,userPAI,eventPAI));
+
             }
         }
-        return false;
+
+        return null;
     }
 
     @Override

@@ -18,8 +18,8 @@ public class CommentController {
         this.commentService = commentService;
     }
 
-    @PostMapping("/{email}/{eventId}")
-    public CommentDto addComment(@PathVariable String email, @PathVariable int eventId , @RequestBody String text){
+    @PostMapping("/{email}/{eventId}/{text}")
+    public CommentDto addComment(@PathVariable String email, @PathVariable int eventId ,@PathVariable String text){
         return  new CommentDto( commentService.create(email,eventId,text));
     }
 
@@ -27,8 +27,8 @@ public class CommentController {
     public boolean delete(@PathVariable int commentId){
         return  commentService.delete(commentId);    }
 
-    @PutMapping("/{commentId}")
-    public CommentDto update(@PathVariable int commentId ,@RequestBody String text){
+    @PutMapping("/{commentId}/{text}")
+    public CommentDto update(@PathVariable int commentId ,@PathVariable String text){
         return new CommentDto(commentService.update(commentId , text));
     }
 }
