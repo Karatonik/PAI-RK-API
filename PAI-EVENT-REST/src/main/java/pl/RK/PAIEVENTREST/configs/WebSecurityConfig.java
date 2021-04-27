@@ -70,7 +70,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         , "/api/comm/**"
                         , "/api/event/**"
                         , "/api/parti**"
-                        , "api/user**").permitAll()
+                        , "api/user**"
+                        ,"api/file**").permitAll()
                 .antMatchers(HttpMethod.POST).permitAll()
                 .antMatchers(HttpMethod.DELETE).permitAll()
                 .antMatchers(HttpMethod.PUT).permitAll()
