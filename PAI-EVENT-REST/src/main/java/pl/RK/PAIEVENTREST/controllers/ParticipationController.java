@@ -28,7 +28,7 @@ public class ParticipationController {
     }
 
     @GetMapping("/event/{eventId}")
-    public Set<ParticipationDto>getEventParticipation(@PathVariable int eventId){
-        return participationService.eventParticipationSet(eventId).stream().map(ParticipationDto::new).collect(Collectors.toSet());
+    public List<ParticipationDto>getEventParticipation(@PathVariable int eventId){
+        return participationService.eventParticipationSet(eventId).stream().map(ParticipationDto::new).collect(Collectors.toList());
     }
 }
