@@ -69,4 +69,11 @@ public class AuthServiceImp implements AuthServiceIF {
         userPaiRepository.save(userPAI);
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
+
+    @Override
+    public ResponseEntity<?> singInByFacebook(SignUpRequest signUpRequest) {
+        UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
+        userPaiRepository.save(userPAI);
+        return authenticate(new LoginRequest(signUpRequest.getEmail(), signUpRequest.getPassword()));
+    }
 }

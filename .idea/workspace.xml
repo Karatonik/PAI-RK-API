@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="64df06fa-3dc1-46d5-be5f-b6460b8005e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/controllers/UserPaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/controllers/UserPaiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/configs/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/configs/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/services/implementations/AuthServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/services/implementations/AuthServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/AuthServiceIF.java" beforeDir="false" afterPath="$PROJECT_DIR$/PAI-EVENT-REST/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/AuthServiceIF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +21,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1rA36eUEmqMkTFQhXBpu0I8Ax81" />

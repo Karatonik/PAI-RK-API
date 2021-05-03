@@ -56,6 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/configuration/security",
                 "/swagger-ui.html",
                 "/webjars/**",
+                "/api/auth/**",
                 "/api/mail/**",
                 "/api/user/pwd/**");
     }
@@ -65,7 +66,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests().antMatchers("/api/auth/**").permitAll()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
                 .antMatchers("/api/test/**"
                         , "/api/comm/**"
                         , "/api/event/**"

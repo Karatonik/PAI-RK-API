@@ -18,7 +18,7 @@ public class AuthController {
         this.authenticationManager = authenticationManager;
     }
 
-    @PostMapping("/singin")
+    @PostMapping("singin")
     public ResponseEntity<?> authenticate(@Valid @RequestBody LoginRequest loginRequest) {
         return authenticationManager.authenticate(loginRequest);
     }
@@ -26,6 +26,11 @@ public class AuthController {
     @PostMapping("singup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         return authenticationManager.register(signUpRequest);
+    }
+
+    @PostMapping("facebook")
+    public ResponseEntity<?> signInWithFacebook(@Valid @RequestBody SignUpRequest signUpRequest) {
+        return authenticationManager.singInByFacebook(signUpRequest);
     }
 
 }

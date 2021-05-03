@@ -9,6 +9,7 @@ import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
@@ -49,7 +50,7 @@ public class EventPaiController {
         return  new EventPAIDto( eventPaiService.get(eventId));
     }
     @GetMapping
-    public List<EventPAIDto> getAll(){
+    public List<EventPAIDto> getAll(Principal principal){
         return  eventPaiService.getAll().stream().parallel().map(EventPAIDto::new).collect(Collectors.toList());
     }
 
