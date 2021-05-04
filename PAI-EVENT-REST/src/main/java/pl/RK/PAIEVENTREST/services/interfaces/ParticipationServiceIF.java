@@ -10,7 +10,7 @@ public interface ParticipationServiceIF {
 
     List<Participation> userParticipationSet(String email);
 
-    Set<Participation> eventParticipationSet(int eventId);
+    List<Participation> eventParticipationSet(int eventId);
 
 
 }

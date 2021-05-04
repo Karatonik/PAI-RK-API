@@ -32,7 +32,10 @@ public class ParticipationServiceImp implements ParticipationServiceIF {
         this.userPaiRepository=userPaiRepository;
     }
 
-
+    //Zaproszenia użytkownika (tylko moje nie eventu) ,
+    // Widać gdy
+    // Ja chcę dołączyć do eventu
+    //Event mnie zaprosi
     @Override
     public List<Participation> userParticipationSet(String email) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(email);
@@ -40,10 +43,15 @@ public class ParticipationServiceImp implements ParticipationServiceIF {
                 .stream().filter(v -> v.getRequest().equals(RequestFrom.User)).collect(Collectors.toList())).orElse(null);
     }
 
+
+    //Zaproszenie przez event
+    //Widać gdy
+    //w widkou zapraszania w  event
+    //osoby zaproszone przez event
     @Override
-    public Set<Participation> eventParticipationSet(int eventId) {
+    public List<Participation> eventParticipationSet(int eventId) {
         Optional<EventPAI>optionalEventPAI = eventPaiRepository.findById(eventId);
         return optionalEventPAI.map(eventPAI -> participationRepository.findByEventPAI(eventPAI)
-                .stream().filter(v->v.getRequest().equals(RequestFrom.Event)).collect(Collectors.toSet())).orElse(null);
+                .stream().filter(v->v.getRequest().equals(RequestFrom.Event)).collect(Collectors.toList())).orElse(null);
     }
 }
