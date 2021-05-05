@@ -1,6 +1,10 @@
 package pl.RK.PAIEVENTREST.services.interfaces;
 
+import pl.RK.PAIEVENTREST.models.EventPAI;
+import pl.RK.PAIEVENTREST.models.Participation;
 import pl.RK.PAIEVENTREST.models.UserPAI;
+
+import java.util.List;
 
 public interface UserPaiServiceIF {
 
@@ -14,9 +18,15 @@ public interface UserPaiServiceIF {
 
     UserPAI set(String email, String password, String nick);
 
-    boolean requestToJoinEvent(String email, int eventId);
+    Participation requestToJoinEvent(String email, int eventId);
 
     boolean acceptParticipation(int participationId, String email);
 
     UserPAI get(String email);
+
+
+    List<EventPAI> getAllMyEventWhereIMAdmin(String email);
+    List<EventPAI> getAllMyEventWhereIMUser (String email);
+
+
 }

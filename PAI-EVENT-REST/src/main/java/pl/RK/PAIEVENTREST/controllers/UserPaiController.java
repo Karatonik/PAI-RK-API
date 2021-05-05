@@ -2,9 +2,14 @@ package pl.RK.PAIEVENTREST.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.RK.PAIEVENTREST.models.Participation;
+import pl.RK.PAIEVENTREST.models.dto.EventPAIDto;
 import pl.RK.PAIEVENTREST.models.dto.UserPAIDto;
 import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/user")
@@ -45,8 +50,11 @@ public class UserPaiController {
         return new UserPAIDto(userPaiService.set(email,password,nick));
     }
 
+
+
+
     @PostMapping("/rtje/{email}/{eventId}")
-    public boolean requestToJoinEvent(@PathVariable String email,@PathVariable int eventId){
+    public Participation requestToJoinEvent(@PathVariable String email, @PathVariable int eventId){
         return userPaiService.requestToJoinEvent(email, eventId);
     }
 
@@ -54,8 +62,35 @@ public class UserPaiController {
     public boolean acceptRequestToJoin(@PathVariable int participleId ,@PathVariable String email){
         return userPaiService.acceptParticipation(participleId,email);
     }
+
+
+
+
+
+
+
+
+
     @GetMapping("/{email}")
     public UserPAIDto get(@PathVariable String email){
         return new UserPAIDto(userPaiService.get(email));
     }
+
+
+
+
+
+
+
+    @GetMapping("/events/user/{email}")
+    public List<EventPAIDto> getAllMyEventWhereIMUser(@PathVariable String email){
+        return userPaiService.getAllMyEventWhereIMUser(email).stream()
+                .parallel().map(EventPAIDto::new).collect(Collectors.toList());
+    }
+    @GetMapping("/events/admin/{email}")
+    public List<EventPAIDto>getAllMyEventWhereIMAdmin(@PathVariable String email){
+        return userPaiService.getAllMyEventWhereIMAdmin(email).stream()
+                .parallel().map(EventPAIDto::new).collect(Collectors.toList());
+    }
+
 }

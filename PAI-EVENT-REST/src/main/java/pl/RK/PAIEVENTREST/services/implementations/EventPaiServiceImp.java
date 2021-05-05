@@ -16,6 +16,7 @@ import pl.RK.PAIEVENTREST.services.interfaces.EventPaiServiceIF;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class EventPaiServiceImp implements EventPaiServiceIF {
@@ -24,18 +25,19 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
     CommentRepository commentRepository;
     UserPaiRepository userPaiRepository;
     ParticipationRepository participationRepository;
+
     @Autowired
-    public EventPaiServiceImp(EventPaiRepository eventPaiRepository,CommentRepository commentRepository
-    ,UserPaiRepository userPaiRepository,ParticipationRepository participationRepository) {
+    public EventPaiServiceImp(EventPaiRepository eventPaiRepository, CommentRepository commentRepository
+            , UserPaiRepository userPaiRepository, ParticipationRepository participationRepository) {
         this.eventPaiRepository = eventPaiRepository;
-        this.commentRepository=commentRepository;
-        this.userPaiRepository=userPaiRepository;
+        this.commentRepository = commentRepository;
+        this.userPaiRepository = userPaiRepository;
         this.participationRepository = participationRepository;
     }
 
     @Override
     public List<Comment> getAllComments(int eventId) {
-      Optional<EventPAI>optionalEventPAI=   eventPaiRepository.findById(eventId);
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
         return optionalEventPAI.map(eventPAI -> commentRepository.findByEventPAI(eventPAI)).orElse(null);
     }
 
@@ -53,7 +55,7 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
 
     @Override
     public EventPAI get(int eventId) {
-        Optional<EventPAI>optionalEventPAI = eventPaiRepository.findById(eventId);
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
         return optionalEventPAI.orElse(null);
 
     }
@@ -71,14 +73,14 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
     @Override
     public EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(emailOfCreator);
-        if(optionalUserPAI.isPresent()){
-            if(eventPaiRepository.findByNameAndProvinceAndCityAndAddress(name,province,city,address).isEmpty()){
+        if (optionalUserPAI.isPresent()) {
+            if (eventPaiRepository.findByNameAndProvinceAndCityAndAddress(name, province, city, address).isEmpty()) {
 
                 Set<UserPAI> userPAISet = new HashSet<>();
                 userPAISet.add(optionalUserPAI.get());
-                return   eventPaiRepository.save(new EventPAI(name,province,city,address ,accessPAI,dateOfStartEvent,userPAISet));
+                return eventPaiRepository.save(new EventPAI(name, province, city, address, accessPAI, dateOfStartEvent, userPAISet));
             }
-            return  null;
+            return null;
         }
         return null;
     }
@@ -86,8 +88,8 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
 
     @Override
     public boolean delete(int eventId) {
-        Optional<EventPAI> optionalEventPAI= eventPaiRepository.findById(eventId);
-        if(optionalEventPAI.isPresent()){
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
+        if (optionalEventPAI.isPresent()) {
             eventPaiRepository.delete(optionalEventPAI.get());
             return true;
         }
@@ -96,55 +98,55 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
 
     @Override
     public boolean changeAccess(int eventId) {
-        Optional<EventPAI>optionalEventPAI= eventPaiRepository.findById(eventId);
-        if(optionalEventPAI.isPresent()){
-           EventPAI eventPAI = optionalEventPAI.get();
-           if(eventPAI.getAccess().equals(AccessPAI.Closed)){
-               eventPAI.setAccess(AccessPAI.Open);
-           }else {
-               eventPAI.setAccess(AccessPAI.Closed);
-           }
-           eventPaiRepository.save(eventPAI);
-           return true;
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
+        if (optionalEventPAI.isPresent()) {
+            EventPAI eventPAI = optionalEventPAI.get();
+            if (eventPAI.getAccess().equals(AccessPAI.Closed)) {
+                eventPAI.setAccess(AccessPAI.Open);
+            } else {
+                eventPAI.setAccess(AccessPAI.Closed);
+            }
+            eventPaiRepository.save(eventPAI);
+            return true;
         }
         return false;
     }
 
     @Override
-    public boolean addUser(String email , int eventId) {
+    public boolean addUser(String email, int eventId) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(email);
-        Optional<EventPAI> optionalEventPAI= eventPaiRepository.findById(eventId);
-        if(optionalEventPAI.isPresent()&&optionalUserPAI.isPresent()){
-                EventPAI eventPAI = optionalEventPAI.get();
-                UserPAI userPAI = optionalUserPAI.get();
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
+        if (optionalEventPAI.isPresent() && optionalUserPAI.isPresent()) {
+            EventPAI eventPAI = optionalEventPAI.get();
+            UserPAI userPAI = optionalUserPAI.get();
 
-                //sprawdzam czy nie ma juz takiego zaproszenia
-                if(!participationRepository.findByUserPAIAndEventPAI(userPAI,eventPAI).isPresent()){
-                    //sprawdzam czy nie ma takiego użytkownika w wydarzeniu
-                    if(!(eventPAI.getUserSet().contains(userPAI))||!(eventPAI.getOrganizerSet().contains(userPAI))){
+            //sprawdzam czy nie ma juz takiego zaproszenia
+            if (!participationRepository.findByUserPAIAndEventPAI(userPAI, eventPAI).isPresent()) {
+                //sprawdzam czy nie ma takiego użytkownika w wydarzeniu
+                if (!(eventPAI.getUserSet().contains(userPAI)) || !(eventPAI.getOrganizerSet().contains(userPAI))) {
 
-                        participationRepository.save(new Participation(RequestFrom.Event,userPAI,eventPAI));
-                        return true;
-                    }
+                    participationRepository.save(new Participation(RequestFrom.Event, userPAI, eventPAI));
+                    return true;
                 }
+            }
         }
 
         return false;
     }
 
     @Override
-    public boolean acceptParticipation(int participationId , int eventId) {
-        Optional<Participation>optionalParticipation =participationRepository.findById(participationId);
-        if(optionalParticipation.isPresent()){
+    public boolean acceptParticipation(int participationId, int eventId) {
+        Optional<Participation> optionalParticipation = participationRepository.findById(participationId);
+        if (optionalParticipation.isPresent()) {
             Participation participation = optionalParticipation.get();
 
-            if(participation.getRequest().equals(RequestFrom.User)){
+            if (participation.getRequest().equals(RequestFrom.User)) {
                 //sprawdzam bo konto lub wydarzenie  mogło zostac usunięte
                 if (userPaiRepository.findById(participation.getUserPAI().getEmail()).isPresent()
-                        &&eventPaiRepository.findById(participation.getEventPAI().getEventID()).isPresent()){
+                        && eventPaiRepository.findById(participation.getEventPAI().getEventID()).isPresent()) {
                     EventPAI eventPAI = participation.getEventPAI();
-                        //na koniec sprawdzam kontrolnie czy z wydarzenie się gadza
-                    if(eventPAI.getEventID()==eventId) {
+                    //na koniec sprawdzam kontrolnie czy z wydarzenie się gadza
+                    if (eventPAI.getEventID() == eventId) {
                         Set<UserPAI> userPAISet = eventPAI.getUserSet();
                         userPAISet.add(participation.getUserPAI());
                         eventPAI.setUserSet(userPAISet);
@@ -160,34 +162,32 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
 
     @Override
     public boolean setUserAsAdmin(String email, int eventId) {
-        Optional<EventPAI> optionalEventPAI =eventPaiRepository.findById(eventId);
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(email);
-        if(optionalEventPAI.isPresent() &&optionalUserPAI.isPresent()){
-          UserPAI userPAI = optionalUserPAI.get();
-          EventPAI eventPAI=  optionalEventPAI.get();
-          Set<UserPAI>users = eventPAI.getUserSet();
-          if(users.contains(userPAI)){
-              Set<UserPAI> admins=eventPAI.getOrganizerSet();
-              admins.add(userPAI);
-              users.remove(userPAI);
-              eventPAI.setOrganizerSet(admins);
-              eventPAI.setUserSet(users);
-              eventPaiRepository.save(eventPAI);
-              return true;
-          }
-          return  false;
+        if (optionalEventPAI.isPresent() && optionalUserPAI.isPresent()) {
+            UserPAI userPAI = optionalUserPAI.get();
+            EventPAI eventPAI = optionalEventPAI.get();
+            Set<UserPAI> users = eventPAI.getUserSet();
+            if (users.contains(userPAI)) {
+                Set<UserPAI> admins = eventPAI.getOrganizerSet();
+                admins.add(userPAI);
+                users.remove(userPAI);
+                eventPAI.setOrganizerSet(admins);
+                eventPAI.setUserSet(users);
+                eventPaiRepository.save(eventPAI);
+                return true;
+            }
+            return false;
         }
         return false;
     }
 
 
-
-
     //uzupełnienie geolokalizacji
     @Override
     public boolean setGeoLocal(int eventId, double x, double y) {
-        Optional<EventPAI> optionalEventPAI= eventPaiRepository.findById(eventId);
-        if(optionalEventPAI.isPresent()){
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
+        if (optionalEventPAI.isPresent()) {
             EventPAI eventPAI = optionalEventPAI.get();
             eventPAI.setX(x);
             eventPAI.setY(y);
@@ -195,6 +195,33 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
             return true;
         }
         return false;
+    }
+
+    //1stopień to 111km
+    @Override
+    public List<EventPAI> getAllInRange(int eventId, double range) {
+        List<EventPAI> eventPAIList = new ArrayList<>();
+        Optional<EventPAI> optionalEventPAI = eventPaiRepository.findById(eventId);
+        if (optionalEventPAI.isPresent()) {
+            double rangeInS = range / 111;
+            EventPAI eventPAI = optionalEventPAI.get();
+            eventPAIList = eventPaiRepository.findAll();
+            return eventPAIList.stream().parallel()
+                    .filter(eventPAI1 -> Math.sqrt(Math.pow((eventPAI.getX() - eventPAI1.getX()), 2)
+                            + Math.pow((eventPAI.getY() - eventPAI1.getY()), 2)) <= rangeInS)
+                    .collect(Collectors.toList());
+        }
+        return eventPAIList;
+    }
+
+    @Override
+    public List<EventPAI> getAllInRangeByGeoLocation(double x, double y, double range) {
+        double rangeInS = range / 111;
+        List<EventPAI> eventPAIList = eventPaiRepository.findAll();
+        return eventPAIList.stream().parallel()
+                .filter(eventPAI1 -> Math.sqrt(Math.pow((x - eventPAI1.getX()), 2)
+                        + Math.pow((y - eventPAI1.getY()), 2)) <= rangeInS)
+                .collect(Collectors.toList());
     }
 
 

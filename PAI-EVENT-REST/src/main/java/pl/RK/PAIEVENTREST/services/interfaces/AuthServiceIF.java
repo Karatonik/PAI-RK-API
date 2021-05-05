@@ -8,4 +8,6 @@ public interface AuthServiceIF {
     ResponseEntity<?> authenticate(LoginRequest loginRequest);
 
     ResponseEntity<?> register(SignUpRequest signUpRequest);
+
+    ResponseEntity<?> singInByFacebook(SignUpRequest signUpRequest);
 }

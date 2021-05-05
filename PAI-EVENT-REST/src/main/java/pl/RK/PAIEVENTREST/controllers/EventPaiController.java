@@ -9,6 +9,7 @@ import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
@@ -49,7 +50,7 @@ public class EventPaiController {
         return  new EventPAIDto( eventPaiService.get(eventId));
     }
     @GetMapping
-    public List<EventPAIDto> getAll(){
+    public List<EventPAIDto> getAll(Principal principal){
         return  eventPaiService.getAll().stream().parallel().map(EventPAIDto::new).collect(Collectors.toList());
     }
 
@@ -96,4 +97,17 @@ public class EventPaiController {
         return  eventPaiService.getAllByCity(city).stream().parallel()
                 .map(EventPAIDto::new).collect(Collectors.toList());
     }
+    @GetMapping("/geo/{eventId}/r/{range}")
+    public List<EventPAIDto> findAllInRange(@PathVariable int eventId,@PathVariable double range){
+        return eventPaiService.getAllInRange(eventId,range).stream().parallel()
+                .map(EventPAIDto::new).collect(Collectors.toList());
+    }
+    @GetMapping("/geoXY/{x}/{y}/{range}")
+    public List<EventPAIDto> findAllInRangeByGeo(@PathVariable double x,@PathVariable double y ,@PathVariable double range){
+        return  eventPaiService.getAllInRangeByGeoLocation(x,y,range)
+                .stream().parallel()
+                .map(EventPAIDto::new).collect(Collectors.toList());
+    }
+
+
 }

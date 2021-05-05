@@ -17,6 +17,8 @@ import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import pl.RK.PAIEVENTREST.services.implementations.UserPaiServiceImp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.core.StringContains.containsString;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -79,14 +81,14 @@ public class UserPaiControllerTest {
                 .andExpect(content().string(containsString("test@test.com")));
     }
 
-    @Test
-    public void rtjeTest() throws Exception{
-    when(userPaiService.requestToJoinEvent(anyString(),anyInt())).thenReturn(true);
-        mvc.perform(post(apiPath + "/rtje/"+user.getEmail()+"/1")
-                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("true")));
-    }
+//    @Test
+//    public void rtjeTest() throws Exception{
+//    when(userPaiService.requestToJoinEvent(anyString(),anyInt())).thenReturn(true);
+//        mvc.perform(post(apiPath + "/rtje/"+user.getEmail()+"/1")
+//                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+//                .andDo(print()).andExpect(status().isOk())
+//                .andExpect(content().string(containsString("true")));
+//    }
 
     @Test
     public void acceptRequestToJoinTest() throws Exception{
@@ -107,8 +109,30 @@ public class UserPaiControllerTest {
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("test@test.com")));
     }
+    @Test
+    public void getAllMyEventWhereIMUserTest() throws Exception{
+        event.setEventID(1);
+        List<EventPAI> eventPAIList = new ArrayList<>();
+        eventPAIList.add(event);
+       when(userPaiService.getAllMyEventWhereIMUser(anyString())).thenReturn(eventPAIList);
 
+        mvc.perform(get(apiPath + "/events/user/"+user.getEmail())
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk())
+               .andExpect(content().string(containsString("testEvent")));
+    }
+    @Test
+    public void getAllMyEventWhereIMAdminTest() throws Exception{
+        event.setEventID(1);
+        List<EventPAI> eventPAIList = new ArrayList<>();
+        eventPAIList.add(event);
+        when(userPaiService.getAllMyEventWhereIMAdmin(anyString())).thenReturn(eventPAIList);
 
+        mvc.perform(get(apiPath + "/events/admin/"+user.getEmail())
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("testEvent")));
+    }
 
 
 

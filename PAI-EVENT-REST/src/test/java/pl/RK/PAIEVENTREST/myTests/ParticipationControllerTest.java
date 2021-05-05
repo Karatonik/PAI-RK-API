@@ -48,20 +48,20 @@ public class ParticipationControllerTest {
     private ParticipationServiceImp participationService;
 
 
-    @Test
-    public void getUserParticipationT() throws Exception{
-        event.setEventID(1);
-        Participation participationU= new Participation(RequestFrom.User,user,event);
-
-        Set<Participation> participationSet =new HashSet<>();
-        participationSet.add(participationU);
-
-        when(participationService.userParticipationSet(anyString())).thenReturn(participationSet);
-
-        mvc.perform(get(apiPath + "/user/"+user.getEmail()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("test@test.com")));
-    }
+//    @Test
+//    public void getUserParticipationT() throws Exception{
+//        event.setEventID(1);
+//        Participation participationU= new Participation(RequestFrom.User,user,event);
+//
+//        Set<Participation> participationSet =new HashSet<>();
+//        participationSet.add(participationU);
+//
+//        when(participationService.userParticipationSet(anyString())).thenReturn(participationSet);
+//
+//        mvc.perform(get(apiPath + "/user/"+user.getEmail()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+//                .andDo(print()).andExpect(status().isOk())
+//                .andExpect(content().string(containsString("test@test.com")));
+//    }
     @Test
     public void getEventParticipationT() throws Exception{
         event.setEventID(1);
