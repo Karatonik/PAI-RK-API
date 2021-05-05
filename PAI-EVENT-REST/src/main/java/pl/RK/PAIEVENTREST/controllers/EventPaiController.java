@@ -97,4 +97,17 @@ public class EventPaiController {
         return  eventPaiService.getAllByCity(city).stream().parallel()
                 .map(EventPAIDto::new).collect(Collectors.toList());
     }
+    @GetMapping("/geo/{eventId}/r/{range}")
+    public List<EventPAIDto> findAllInRange(@PathVariable int eventId,@PathVariable double range){
+        return eventPaiService.getAllInRange(eventId,range).stream().parallel()
+                .map(EventPAIDto::new).collect(Collectors.toList());
+    }
+    @GetMapping("/geoXY/{x}/{y}/{range}")
+    public List<EventPAIDto> findAllInRangeByGeo(@PathVariable double x,@PathVariable double y ,@PathVariable double range){
+        return  eventPaiService.getAllInRangeByGeoLocation(x,y,range)
+                .stream().parallel()
+                .map(EventPAIDto::new).collect(Collectors.toList());
+    }
+
+
 }

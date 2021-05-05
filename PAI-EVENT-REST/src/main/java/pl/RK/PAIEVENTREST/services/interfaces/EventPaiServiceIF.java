@@ -37,4 +37,8 @@ public interface EventPaiServiceIF {
     boolean setUserAsAdmin(String email, int eventId);
 
     boolean setGeoLocal(int eventId ,double x,double y);
+    //range w km
+    List<EventPAI> getAllInRange(int eventId , double range);
+    //range w km
+    List<EventPAI> getAllInRangeByGeoLocation(double x,double y,double range);
 }
