@@ -11,7 +11,6 @@ import pl.RK.PAIEVENTREST.models.FileDB;
 import pl.RK.PAIEVENTREST.models.dto.FileDBDto;
 import pl.RK.PAIEVENTREST.models.enums.TypeOfImage;
 import pl.RK.PAIEVENTREST.services.implementations.FileDBServiceImp;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,7 +19,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("api/file")
 @CrossOrigin(origins = "http://localhost:3000")
-@EnableSwagger2
 public class FileController {
 
     FileDBServiceImp fileDBService;
@@ -31,12 +29,13 @@ public class FileController {
     }
 
     @PostMapping("/{email}/{typeOfImage}/{eventId}")
-    public boolean upload(@PathVariable String email,@PathVariable TypeOfImage typeOfImage
-            ,@PathVariable Integer eventId ,@RequestParam("file") MultipartFile file) throws IOException {
-      return  fileDBService.store(file, email, typeOfImage, eventId);
+    public boolean upload(@PathVariable String email, @PathVariable TypeOfImage typeOfImage
+            , @PathVariable Integer eventId, @RequestParam("file") MultipartFile file) throws IOException {
+        return fileDBService.store(file, email, typeOfImage, eventId);
     }
+
     @GetMapping
-    public ResponseEntity<List<FileDBDto>> getAll(){
+    public ResponseEntity<List<FileDBDto>> getAll() {
         List<FileDBDto> files = fileDBService.getAllFiles().map(dbFile -> {
             String fileDownloadUri = ServletUriComponentsBuilder
                     .fromCurrentContextPath()
@@ -55,24 +54,25 @@ public class FileController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<byte[]> get(@PathVariable Integer id){
+    public ResponseEntity<byte[]> get(@PathVariable Integer id) {
         FileDB fileDB = fileDBService.getFile(id);
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
-}
+    }
 
     @GetMapping("/av/{email}")
-        public ResponseEntity<byte[]> getAvatar(@PathVariable String email) {
-        FileDB fileDB =fileDBService.getAvatar(email);
+    public ResponseEntity<byte[]> getAvatar(@PathVariable String email) {
+        FileDB fileDB = fileDBService.getAvatar(email);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
+
     @GetMapping("/bg/{eventId}")
     public ResponseEntity<byte[]> getBackGround(@PathVariable Integer eventId) {
-        FileDB fileDB =fileDBService.getBackground(eventId);
+        FileDB fileDB = fileDBService.getBackground(eventId);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
