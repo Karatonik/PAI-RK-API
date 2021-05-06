@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="" />
+    <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1s9nCT4j30dO1k3aajKgycbSp4x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -25,8 +36,70 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserPaiControllerTest">
+    <configuration name="CommentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.CommentControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.EventPaiControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParticipationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.ParticipationControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.UserPaiControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PaiEventRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="PAI-EVENT-REST" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.RK.PAIEVENTREST.PaiEventRestApplication" />
@@ -34,6 +107,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserPaiControllerTest" />
+        <item itemvalue="JUnit.ParticipationControllerTest" />
+        <item itemvalue="JUnit.EventPaiControllerTest" />
+        <item itemvalue="JUnit.CommentControllerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,6 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620293545901</updated>
       <workItem from="1620293556833" duration="1091000" />
+      <workItem from="1620294910429" duration="1705000" />
     </task>
     <servers />
   </component>
@@ -57,37 +139,41 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620293851648" />
-    <state width="1875" height="446" key="GridCell.Tab.0.bottom" timestamp="1620294625331">
+    <state width="1875" height="252" key="GridCell.Tab.0.bottom" timestamp="1620296960830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="446" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294625331" />
-    <state width="1875" height="446" key="GridCell.Tab.0.center" timestamp="1620294625331">
+    <state width="1875" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960830" />
+    <state width="1875" height="252" key="GridCell.Tab.0.center" timestamp="1620296960829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="446" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294625331" />
-    <state width="1875" height="446" key="GridCell.Tab.0.left" timestamp="1620294625331">
+    <state width="1875" height="252" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960829" />
+    <state width="1875" height="252" key="GridCell.Tab.0.left" timestamp="1620296960829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="446" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294625331" />
-    <state width="1875" height="446" key="GridCell.Tab.0.right" timestamp="1620294625331">
+    <state width="1875" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960829" />
+    <state width="1875" height="252" key="GridCell.Tab.0.right" timestamp="1620296960829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="446" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294625331" />
-    <state width="1875" height="131" key="GridCell.Tab.1.bottom" timestamp="1620294583072">
+    <state width="1875" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960829" />
+    <state width="1875" height="252" key="GridCell.Tab.1.bottom" timestamp="1620296787447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="131" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294583072" />
-    <state width="1875" height="131" key="GridCell.Tab.1.center" timestamp="1620294583071">
+    <state width="1875" height="252" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
+    <state width="1875" height="252" key="GridCell.Tab.1.center" timestamp="1620296787447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="131" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294583071" />
-    <state width="1875" height="131" key="GridCell.Tab.1.left" timestamp="1620294583071">
+    <state width="1875" height="252" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
+    <state width="1875" height="252" key="GridCell.Tab.1.left" timestamp="1620296787447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="131" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294583071" />
-    <state width="1875" height="131" key="GridCell.Tab.1.right" timestamp="1620294583071">
+    <state width="1875" height="252" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
+    <state width="1875" height="252" key="GridCell.Tab.1.right" timestamp="1620296787447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="131" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294583071" />
+    <state width="1875" height="252" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1620294918254">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294918254" />
   </component>
 </project>
