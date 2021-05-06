@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserPAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserPAI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -20,6 +34,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1s9nCT4j30dO1k3aajKgycbSp4x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,7 +60,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="JUnit.UserPaiControllerTest">
+  <component name="RunManager" selected="Spring Boot.PaiEventRestApplication">
     <configuration name="CommentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -134,46 +155,56 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1620293851648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620293851648" />
-    <state width="1875" height="252" key="GridCell.Tab.0.bottom" timestamp="1620296960830">
+    <state width="1877" height="368" key="GridCell.Tab.0.bottom" timestamp="1620306029862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960830" />
-    <state width="1875" height="252" key="GridCell.Tab.0.center" timestamp="1620296960829">
+    <state width="1877" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029862" />
+    <state width="1877" height="368" key="GridCell.Tab.0.center" timestamp="1620306029862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960829" />
-    <state width="1875" height="252" key="GridCell.Tab.0.left" timestamp="1620296960829">
+    <state width="1877" height="368" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029862" />
+    <state width="1877" height="368" key="GridCell.Tab.0.left" timestamp="1620306029860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960829" />
-    <state width="1875" height="252" key="GridCell.Tab.0.right" timestamp="1620296960829">
+    <state width="1877" height="368" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029860" />
+    <state width="1877" height="368" key="GridCell.Tab.0.right" timestamp="1620306029862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296960829" />
-    <state width="1875" height="252" key="GridCell.Tab.1.bottom" timestamp="1620296787447">
+    <state width="1877" height="368" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029862" />
+    <state width="1877" height="368" key="GridCell.Tab.1.bottom" timestamp="1620306029863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
-    <state width="1875" height="252" key="GridCell.Tab.1.center" timestamp="1620296787447">
+    <state width="1877" height="368" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029863" />
+    <state width="1877" height="368" key="GridCell.Tab.1.center" timestamp="1620306029862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
-    <state width="1875" height="252" key="GridCell.Tab.1.left" timestamp="1620296787447">
+    <state width="1877" height="368" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029862" />
+    <state width="1877" height="368" key="GridCell.Tab.1.left" timestamp="1620306029862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
-    <state width="1875" height="252" key="GridCell.Tab.1.right" timestamp="1620296787447">
+    <state width="1877" height="368" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029862" />
+    <state width="1877" height="368" key="GridCell.Tab.1.right" timestamp="1620306029863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="252" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620296787447" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1620294918254">
+    <state width="1877" height="368" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620306029863" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1620305478389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294918254" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620305478389" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1620305004673">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620305004673" />
   </component>
 </project>

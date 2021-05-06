@@ -47,13 +47,14 @@ public class EventPAI {
     //geo y
     @Column(columnDefinition = "double default 0")
     double y;
-
-    @OneToMany
-    @JoinColumn(name ="userpai")
+   // @OneToMany//(mappedBy ="userpai")
+   // @JoinColumn(name ="userpai")
+    @ManyToMany(cascade = CascadeType.ALL)
     Set<UserPAI> OrganizerSet;
 
-    @OneToMany
-    @JoinColumn(name ="userpai")
+   // @OneToMany//(mappedBy ="userpai")
+   // @JoinColumn(name ="userpai")
+    @ManyToMany(cascade = CascadeType.ALL)
     Set<UserPAI> userSet;
 
 

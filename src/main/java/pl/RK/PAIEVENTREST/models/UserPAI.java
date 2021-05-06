@@ -6,12 +6,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @AllArgsConstructor
 @Getter
