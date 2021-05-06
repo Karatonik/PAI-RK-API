@@ -54,7 +54,7 @@ public class FileController {
         return ResponseEntity.status(HttpStatus.OK).body(files);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping
     public ResponseEntity<byte[]> get(@RequestParam Integer id){
         FileDB fileDB = fileDBService.getFile(id);
 
@@ -63,14 +63,14 @@ public class FileController {
                 .body(fileDB.getData());
 }
 
-    @GetMapping("/av/{email}")
+    @GetMapping("/av")
         public ResponseEntity<byte[]> getAvatar(@RequestParam String email) {
         FileDB fileDB =fileDBService.getAvatar(email);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
-    @GetMapping("/bg/{eventId}")
+    @GetMapping("/bg")
     public ResponseEntity<byte[]> getBackGround(@RequestParam Integer eventId) {
         FileDB fileDB =fileDBService.getBackground(eventId);
         return ResponseEntity.ok()
