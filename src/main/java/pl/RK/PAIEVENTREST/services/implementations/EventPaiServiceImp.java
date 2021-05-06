@@ -76,9 +76,9 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
         if (optionalUserPAI.isPresent()) {
             if (eventPaiRepository.findByNameAndProvinceAndCityAndAddress(name, province, city, address).isEmpty()) {
 
-                Set<UserPAI> userPAISet = new HashSet<>();
-                userPAISet.add(optionalUserPAI.get());
-                return eventPaiRepository.save(new EventPAI(name, province, city, address, accessPAI, dateOfStartEvent, userPAISet));
+                Set<UserPAI> organizerPAISet = new HashSet<>();
+                organizerPAISet.add(optionalUserPAI.get());
+                return eventPaiRepository.save(new EventPAI(name, province, city, address, accessPAI, dateOfStartEvent, organizerPAISet));
             }
             return null;
         }

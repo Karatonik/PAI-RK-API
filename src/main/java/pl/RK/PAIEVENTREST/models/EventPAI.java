@@ -50,7 +50,7 @@ public class EventPAI {
    // @OneToMany//(mappedBy ="userpai")
    // @JoinColumn(name ="userpai")
     @ManyToMany(cascade = CascadeType.ALL)
-    Set<UserPAI> OrganizerSet;
+    Set<UserPAI> organizerSet;
 
    // @OneToMany//(mappedBy ="userpai")
    // @JoinColumn(name ="userpai")
@@ -58,14 +58,15 @@ public class EventPAI {
     Set<UserPAI> userSet;
 
 
-    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, Set<UserPAI> userSet) {
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, Set<UserPAI> organizerSet) {
         this.name = name;
         this.province = province;
         this.city = city;
         this.address = address;
         this.access = access;
         this.dateOfStartEvent = dateOfStartEvent;
-        this.userSet = userSet;
+        this.userSet = new HashSet<>();
+        this.organizerSet=organizerSet;
         this.x=0;
         this.y=0;
     }
@@ -77,8 +78,8 @@ public class EventPAI {
         this.access = access;
         this.dateOfStartEvent = dateOfStartEvent;
         this.userSet = new HashSet<>();
-        this.OrganizerSet = new HashSet<>();
-        this.OrganizerSet.add(organizer);
+        this.organizerSet = new HashSet<>();
+        this.organizerSet.add(organizer);
         this.x=0;
         this.y=0;
     }
