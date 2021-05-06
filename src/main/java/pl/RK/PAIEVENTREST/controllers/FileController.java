@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("api/file")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://eventporoj.tk")
 public class FileController {
 
     FileDBServiceImp fileDBService;
@@ -28,10 +28,10 @@ public class FileController {
         this.fileDBService = fileDBService;
     }
 
-    @PostMapping("/{email}/{typeOfImage}/{eventId}")
-    public boolean upload(@PathVariable String email, @PathVariable TypeOfImage typeOfImage
-            , @PathVariable Integer eventId, @RequestParam("file") MultipartFile file) throws IOException {
-        return fileDBService.store(file, email, typeOfImage, eventId);
+    @PostMapping("/")
+    public boolean upload(@RequestParam String email,@RequestParam TypeOfImage typeOfImage
+            ,@RequestParam Integer eventId ,@RequestPart("file") MultipartFile file) throws IOException {
+        return  fileDBService.store(file, email, typeOfImage, eventId);
     }
 
     @GetMapping
@@ -53,8 +53,8 @@ public class FileController {
         return ResponseEntity.status(HttpStatus.OK).body(files);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<byte[]> get(@PathVariable Integer id) {
+    @GetMapping
+    public ResponseEntity<byte[]> get(@RequestParam Integer id) {
         FileDB fileDB = fileDBService.getFile(id);
 
         return ResponseEntity.ok()
@@ -62,16 +62,16 @@ public class FileController {
                 .body(fileDB.getData());
     }
 
-    @GetMapping("/av/{email}")
-    public ResponseEntity<byte[]> getAvatar(@PathVariable String email) {
+    @GetMapping("/av")
+    public ResponseEntity<byte[]> getAvatar(@RequestParam String email) {
         FileDB fileDB = fileDBService.getAvatar(email);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
 
-    @GetMapping("/bg/{eventId}")
-    public ResponseEntity<byte[]> getBackGround(@PathVariable Integer eventId) {
+    @GetMapping("/bg")
+    public ResponseEntity<byte[]> getBackGround(@RequestParam Integer eventId) {
         FileDB fileDB = fileDBService.getBackground(eventId);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")

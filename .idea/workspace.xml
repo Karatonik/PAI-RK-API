@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EmailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" afterDir="false" />
@@ -11,6 +11,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/ParticipationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/ParticipationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/UserPaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/UserPaiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/FileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/FileDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/Participation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/Participation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserDetailsImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserDetailsImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/ParticipationServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/ParticipationServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/ParticipationServiceIF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/ParticipationServiceIF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/ParticipationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/ParticipationControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/UserPaiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/UserPaiControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PSS-LAB-RK" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/PAI-RK-project-management" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.PaiEventRestApplication">
@@ -169,18 +177,18 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1620293851648">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1620326998965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620293851648" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620326998965" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1620309571208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620309571208" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1620313589316">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1620326783301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620313589316" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620326783301" />
     <state width="1877" height="371" key="GridCell.Tab.0.bottom" timestamp="1620314588297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

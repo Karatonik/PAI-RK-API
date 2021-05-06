@@ -7,7 +7,7 @@ import pl.RK.PAIEVENTREST.services.implementations.CommentServiceImp;
 
 @RestController
 @RequestMapping("api/comm")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://eventporoj.tk")
 public class CommentController {
 
     CommentServiceImp commentService;
