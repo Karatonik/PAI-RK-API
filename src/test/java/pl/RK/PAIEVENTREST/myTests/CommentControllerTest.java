@@ -54,14 +54,12 @@ public class CommentControllerTest {
 
         comment.setCommentId(1);
         comment.setDate(new Date(System.currentTimeMillis()));
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(comment.getText());
 
         when(commentService.create(anyString(), anyInt(), anyString())).thenReturn(comment);
 
 
-        mvc.perform(post(apiPath + "/" + user.getEmail() + "/" + comment.getCommentId())
-                .content(json).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+        mvc.perform(post(apiPath + "/" + user.getEmail() + "/" + comment.getCommentId()+"/"+comment.getText())
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("test@test.com")));
 
@@ -82,7 +80,7 @@ public class CommentControllerTest {
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString("nowa wartość");
         when(commentService.update(anyInt(), anyString())).thenReturn(comment);
-        mvc.perform(put(apiPath + "/1").content(json).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+        mvc.perform(put(apiPath + "/1"+"/"+comment.getText()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("test@test.com")));
 

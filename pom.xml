@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PAI-EVENT-REST</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -29,7 +30,8 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>8.0.18</scope>
+			<scope>runtime</scope>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

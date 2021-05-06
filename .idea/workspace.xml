@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/configs/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/configs/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/CommentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/CommentControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +72,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaiEventRestApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.PaiEventRestApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ParticipationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -109,6 +126,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaiEventRestApplicationTests" />
         <item itemvalue="JUnit.UserPaiControllerTest" />
         <item itemvalue="JUnit.ParticipationControllerTest" />
         <item itemvalue="JUnit.EventPaiControllerTest" />
@@ -128,6 +146,7 @@
       <updated>1620293545901</updated>
       <workItem from="1620293556833" duration="1091000" />
       <workItem from="1620294910429" duration="1705000" />
+      <workItem from="1620301459482" duration="530000" />
     </task>
     <servers />
   </component>
@@ -139,41 +158,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620293851648" />
-    <state width="1877" height="252" key="GridCell.Tab.0.bottom" timestamp="1620299778310">
+    <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1620302041380">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778310" />
-    <state width="1877" height="252" key="GridCell.Tab.0.center" timestamp="1620299778310">
+    <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620302041380" />
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom" timestamp="1620302153534">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778310" />
-    <state width="1877" height="252" key="GridCell.Tab.0.left" timestamp="1620299778310">
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620302153534" />
+    <state width="1877" height="252" key="GridCell.Tab.0.center" timestamp="1620302153534">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778310" />
-    <state width="1877" height="252" key="GridCell.Tab.0.right" timestamp="1620299778310">
+    <state width="1877" height="252" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620302153534" />
+    <state width="1877" height="252" key="GridCell.Tab.0.left" timestamp="1620302153534">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778310" />
-    <state width="1877" height="252" key="GridCell.Tab.1.bottom" timestamp="1620299778311">
+    <state width="1877" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620302153534" />
+    <state width="1877" height="252" key="GridCell.Tab.0.right" timestamp="1620302153534">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778311" />
-    <state width="1877" height="252" key="GridCell.Tab.1.center" timestamp="1620299778310">
+    <state width="1877" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620302153534" />
+    <state width="1877" height="252" key="GridCell.Tab.1.bottom" timestamp="1620300946004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778310" />
-    <state width="1877" height="252" key="GridCell.Tab.1.left" timestamp="1620299778310">
+    <state width="1877" height="252" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620300946004" />
+    <state width="1877" height="252" key="GridCell.Tab.1.center" timestamp="1620300946004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778310" />
-    <state width="1877" height="252" key="GridCell.Tab.1.right" timestamp="1620299778311">
+    <state width="1877" height="252" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620300946004" />
+    <state width="1877" height="252" key="GridCell.Tab.1.left" timestamp="1620300946003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="252" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620299778311" />
+    <state width="1877" height="252" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620300946003" />
+    <state width="1877" height="252" key="GridCell.Tab.1.right" timestamp="1620300946004">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="252" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620300946004" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1620294918254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294918254" />
+    <state x="-1464" y="-15" width="1082" height="747" maximized="true" key="dock-window-1" timestamp="1620300563898">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state x="-1464" y="-15" width="1082" height="747" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620300563898" />
   </component>
 </project>
