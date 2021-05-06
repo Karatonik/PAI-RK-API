@@ -58,7 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/webjars/**",
                 "/api/auth/**",
                 "/api/mail/**",
-                "/api/user/pwd/**");
+                "/api/user/pwd/**",
+                "/");
     }
 
     @Override
