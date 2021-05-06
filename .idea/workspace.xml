@@ -3,22 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/ParticipationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/ParticipationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/UserPaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/UserPaiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/FileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/FileDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/Participation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/Participation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserDetailsImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserDetailsImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/ParticipationServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/ParticipationServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/ParticipationServiceIF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/ParticipationServiceIF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/ParticipationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/ParticipationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/UserPaiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/UserPaiControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

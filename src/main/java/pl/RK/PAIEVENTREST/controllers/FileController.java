@@ -34,7 +34,7 @@ public class FileController {
         return  fileDBService.store(file, email, typeOfImage, eventId);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<FileDBDto>> getAll() {
         List<FileDBDto> files = fileDBService.getAllFiles().map(dbFile -> {
             String fileDownloadUri = ServletUriComponentsBuilder
@@ -53,7 +53,7 @@ public class FileController {
         return ResponseEntity.status(HttpStatus.OK).body(files);
     }
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<byte[]> get(@RequestParam Integer id) {
         FileDB fileDB = fileDBService.getFile(id);
 
