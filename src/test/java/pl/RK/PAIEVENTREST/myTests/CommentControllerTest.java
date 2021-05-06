@@ -77,8 +77,6 @@ public class CommentControllerTest {
 
         when(commentService.update(anyInt(), anyString())).thenReturn(comment);
 
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString("nowa wartość");
         when(commentService.update(anyInt(), anyString())).thenReturn(comment);
         mvc.perform(put(apiPath + "/1"+"/"+comment.getText()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk())

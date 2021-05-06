@@ -151,7 +151,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     @Override
     public List<EventPAI> getAllMyEventWhereIMAdmin(String email) {
         List<EventPAI> eventPAIList = new ArrayList<>();
-        Optional<UserPAI> optionalUserPAI = userPaiRepository.findByUserKey(email);
+        Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(email);
         if (optionalUserPAI.isPresent()) {
             return eventPaiRepository.getAllEventWhereIMAdmin(optionalUserPAI.get());
         }
@@ -161,7 +161,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     @Override
     public List<EventPAI> getAllMyEventWhereIMUser(String email) {
         List<EventPAI> eventPAIList = new ArrayList<>();
-        Optional<UserPAI> optionalUserPAI = userPaiRepository.findByUserKey(email);
+        Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(email);
         if (optionalUserPAI.isPresent()) {
             return eventPaiRepository.getAllEventWhereIMUser(optionalUserPAI.get());
         }

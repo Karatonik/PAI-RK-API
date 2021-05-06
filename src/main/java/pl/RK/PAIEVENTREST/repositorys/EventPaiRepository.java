@@ -14,7 +14,7 @@ public interface EventPaiRepository extends JpaRepository<EventPAI , Integer> {
     public List<EventPAI> findByNameAndProvinceAndCityAndAddress(String name,String province,String city, String address);
 
     public List<EventPAI> findAllByCity(String city);
-    @Query("select dev from EventPAI dev join dev.OrganizerSet d where d = ?1")
+    @Query("select dev from EventPAI dev join dev.organizerSet d where d = ?1")
    public List<EventPAI> getAllEventWhereIMAdmin (UserPAI userPAI);
     @Query("select dev from EventPAI dev join dev.userSet d where d = ?1")
     public List<EventPAI> getAllEventWhereIMUser(UserPAI userPAI);

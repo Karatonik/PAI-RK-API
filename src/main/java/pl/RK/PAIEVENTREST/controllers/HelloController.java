@@ -15,6 +15,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String getHello(){
-        return "Hello";
+        return "Api projekt PAI /n Authors :API-Karaton , FRONT-ROMZI ,SUPPORT-ZUZI";
     }
 }

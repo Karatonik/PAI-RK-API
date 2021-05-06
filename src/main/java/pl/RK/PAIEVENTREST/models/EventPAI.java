@@ -47,24 +47,26 @@ public class EventPAI {
     //geo y
     @Column(columnDefinition = "double default 0")
     double y;
+   // @OneToMany//(mappedBy ="userpai")
+   // @JoinColumn(name ="userpai")
+    @ManyToMany(cascade = CascadeType.ALL)
+    Set<UserPAI> organizerSet;
 
-    @OneToMany
-    @JoinColumn(name ="userpai")
-    Set<UserPAI> OrganizerSet;
-
-    @OneToMany
-    @JoinColumn(name ="userpai")
+   // @OneToMany//(mappedBy ="userpai")
+   // @JoinColumn(name ="userpai")
+    @ManyToMany(cascade = CascadeType.ALL)
     Set<UserPAI> userSet;
 
 
-    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, Set<UserPAI> userSet) {
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, Set<UserPAI> organizerSet) {
         this.name = name;
         this.province = province;
         this.city = city;
         this.address = address;
         this.access = access;
         this.dateOfStartEvent = dateOfStartEvent;
-        this.userSet = userSet;
+        this.userSet = new HashSet<>();
+        this.organizerSet=organizerSet;
         this.x=0;
         this.y=0;
     }
@@ -76,8 +78,8 @@ public class EventPAI {
         this.access = access;
         this.dateOfStartEvent = dateOfStartEvent;
         this.userSet = new HashSet<>();
-        this.OrganizerSet = new HashSet<>();
-        this.OrganizerSet.add(organizer);
+        this.organizerSet = new HashSet<>();
+        this.organizerSet.add(organizer);
         this.x=0;
         this.y=0;
     }
