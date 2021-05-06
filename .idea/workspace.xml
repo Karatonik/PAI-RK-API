@@ -41,7 +41,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Spring Boot.PaiEventRestApplication">
+=======
+  <component name="RunManager" selected="JUnit.EventPaiControllerTest.findAllInRangeByGeoTest">
+>>>>>>> Stashed changes
     <configuration name="CommentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -57,7 +61,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EventPaiControllerTest.findAllInRangeByGeoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
         <pattern>
@@ -67,7 +71,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
       <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.EventPaiControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="findAllInRangeByGeoTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventPaiControllerTest.findAllInRangeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.EventPaiControllerTest" />
+      <option name="METHOD_NAME" value="findAllInRangeTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,11 +147,15 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="JUnit.PaiEventRestApplicationTests" />
+=======
+        <item itemvalue="JUnit.EventPaiControllerTest.findAllInRangeByGeoTest" />
+        <item itemvalue="JUnit.EventPaiControllerTest.findAllInRangeTest" />
+        <item itemvalue="JUnit.CommentControllerTest" />
+>>>>>>> Stashed changes
         <item itemvalue="JUnit.UserPaiControllerTest" />
         <item itemvalue="JUnit.ParticipationControllerTest" />
-        <item itemvalue="JUnit.EventPaiControllerTest" />
-        <item itemvalue="JUnit.CommentControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +183,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620293851648" />
+<<<<<<< Updated upstream
     <state x="779" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1620302041380">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -175,6 +201,25 @@
     </state>
     <state width="1877" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620302153534" />
     <state width="1877" height="252" key="GridCell.Tab.0.right" timestamp="1620302153534">
+=======
+    <state width="1877" height="151" key="GridCell.Tab.0.bottom" timestamp="1620308991165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="151" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620308991165" />
+    <state width="1877" height="151" key="GridCell.Tab.0.center" timestamp="1620308991165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="151" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620308991165" />
+    <state width="1877" height="151" key="GridCell.Tab.0.left" timestamp="1620308991165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="151" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620308991165" />
+    <state width="1877" height="151" key="GridCell.Tab.0.right" timestamp="1620308991165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="151" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620308991165" />
+    <state width="1877" height="357" key="GridCell.Tab.1.bottom" timestamp="1620307123631">
+>>>>>>> Stashed changes
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620302153534" />
@@ -197,10 +242,18 @@
     <state x="461" y="162" key="SettingsEditor" timestamp="1620294918254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+<<<<<<< Updated upstream
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620294918254" />
     <state x="-1464" y="-15" width="1082" height="747" maximized="true" key="dock-window-1" timestamp="1620300563898">
       <screen x="-1920" y="0" width="1536" height="824" />
     </state>
     <state x="-1464" y="-15" width="1082" height="747" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620300563898" />
+=======
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620305004673" />
+    <state x="-1623" y="-19" width="1226" height="848" maximized="true" key="dock-window-1" timestamp="1620308872051">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state x="-1623" y="-19" width="1226" height="848" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620308872051" />
+>>>>>>> Stashed changes
   </component>
 </project>
