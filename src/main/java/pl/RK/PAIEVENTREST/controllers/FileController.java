@@ -32,7 +32,7 @@ public class FileController {
 
     @PostMapping("/{email}/{typeOfImage}/{eventId}")
     public boolean upload(@PathVariable String email,@PathVariable TypeOfImage typeOfImage
-            ,@PathVariable Integer eventId ,@RequestParam("file") MultipartFile file) throws IOException {
+            ,@PathVariable Integer eventId ,@RequestPart("file") MultipartFile file) throws IOException {
       return  fileDBService.store(file, email, typeOfImage, eventId);
     }
     @GetMapping

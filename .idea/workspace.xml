@@ -58,22 +58,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="JUnit.ParticipationControllerTest.getParticipationFromEventToUserT">
-    <configuration name="CommentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PAI-EVENT-REST" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
-      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.CommentControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ParticipationControllerTest.getParticipationFromUserToEventT">
     <configuration name="EventPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -120,6 +105,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ParticipationControllerTest.getParticipationFromUserToEventT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.ParticipationControllerTest" />
+      <option name="METHOD_NAME" value="getParticipationFromUserToEventT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -144,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParticipationControllerTest.getParticipationFromUserToEventT" />
         <item itemvalue="JUnit.ParticipationControllerTest.getParticipationFromEventToUserT" />
         <item itemvalue="JUnit.UserPaiControllerTest" />
         <item itemvalue="JUnit.ParticipationControllerTest" />
         <item itemvalue="JUnit.EventPaiControllerTest" />
-        <item itemvalue="JUnit.CommentControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +165,8 @@
       <updated>1620293545901</updated>
       <workItem from="1620293556833" duration="1091000" />
       <workItem from="1620294910429" duration="1705000" />
-      <workItem from="1620316987714" duration="286000" />
+      <workItem from="1620316987714" duration="1147000" />
+      <workItem from="1620323216301" duration="108000" />
     </task>
     <servers />
   </component>
@@ -182,22 +184,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620317184295" />
-    <state width="1877" height="371" key="GridCell.Tab.0.bottom" timestamp="1620312053636">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1620318140399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620312053636" />
-    <state width="1877" height="371" key="GridCell.Tab.0.center" timestamp="1620312053636">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620318140399" />
+    <state width="1877" height="370" key="GridCell.Tab.0.bottom" timestamp="1620318141935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620312053636" />
-    <state width="1877" height="371" key="GridCell.Tab.0.left" timestamp="1620312053636">
+    <state width="1877" height="370" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620318141935" />
+    <state width="1877" height="370" key="GridCell.Tab.0.center" timestamp="1620318141935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620312053636" />
-    <state width="1877" height="371" key="GridCell.Tab.0.right" timestamp="1620312053636">
+    <state width="1877" height="370" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620318141935" />
+    <state width="1877" height="370" key="GridCell.Tab.0.left" timestamp="1620318141935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620312053636" />
+    <state width="1877" height="370" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620318141935" />
+    <state width="1877" height="370" key="GridCell.Tab.0.right" timestamp="1620318141935">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="370" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620318141935" />
     <state width="1877" height="371" key="GridCell.Tab.1.bottom" timestamp="1620312053637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
