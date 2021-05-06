@@ -234,6 +234,40 @@ public class EventPaiControllerTest {
 
 
     }
+    @Test
+    public void findAllInRangeTest() throws Exception{
+        EventPAI eventPAI1 = new EventPAI("testEvent22", "Kujawskopomorskie", "Toruń", "Komunalna 2"
+                , AccessPAI.Closed, LocalDateTime.now(), user);
+        List<EventPAI> eventPAIList = new ArrayList<>();
+        eventPAIList.add(event);
+        eventPAIList.add(eventPAI1);
+
+        when(eventPaiService.getAllInRange(anyInt(),anyDouble())).thenReturn(eventPAIList);
+
+        mvc.perform(get(apiPath + "/geo/1/r/20")
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("testEvent")));
+
+    }
+    @Test
+    public void findAllInRangeByGeoTest() throws Exception{
+        EventPAI eventPAI1 = new EventPAI("testEvent22", "Kujawskopomorskie", "Toruń", "Komunalna 2"
+                , AccessPAI.Closed, LocalDateTime.now(), user);
+        List<EventPAI> eventPAIList = new ArrayList<>();
+        eventPAIList.add(event);
+        eventPAIList.add(eventPAI1);
+
+        when(eventPaiService.getAllInRangeByGeoLocation(anyDouble(),anyDouble(),anyDouble())).thenReturn(eventPAIList);
+
+        mvc.perform(get(apiPath + "/geoXY/0/0/20")
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("testEvent")));
+
+    }
+
+
 
 
 }
