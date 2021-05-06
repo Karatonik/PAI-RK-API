@@ -19,7 +19,9 @@ import pl.RK.PAIEVENTREST.models.enums.RequestFrom;
 import pl.RK.PAIEVENTREST.services.implementations.ParticipationServiceImp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static org.hamcrest.core.StringContains.containsString;
@@ -48,29 +50,29 @@ public class ParticipationControllerTest {
     private ParticipationServiceImp participationService;
 
 
-//    @Test
-//    public void getUserParticipationT() throws Exception{
-//        event.setEventID(1);
-//        Participation participationU= new Participation(RequestFrom.User,user,event);
-//
-//        Set<Participation> participationSet =new HashSet<>();
-//        participationSet.add(participationU);
-//
-//        when(participationService.userParticipationSet(anyString())).thenReturn(participationSet);
-//
-//        mvc.perform(get(apiPath + "/user/"+user.getEmail()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
-//                .andDo(print()).andExpect(status().isOk())
-//                .andExpect(content().string(containsString("test@test.com")));
-//    }
+    @Test
+   public void getUserParticipationT() throws Exception{
+        event.setEventID(1);
+       Participation participationU= new Participation(RequestFrom.User,user,event);
+
+        List<Participation> participationList =new ArrayList<>();
+        participationList.add(participationU);
+
+        when(participationService.userParticipationSet(anyString())).thenReturn(participationList);
+
+        mvc.perform(get(apiPath + "/user/"+user.getEmail()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("test@test.com")));
+    }
     @Test
     public void getEventParticipationT() throws Exception{
         event.setEventID(1);
         Participation participationE= new Participation(RequestFrom.Event,user,event);
 
-        Set<Participation> participationSet =new HashSet<>();
-        participationSet.add(participationE);
+        List<Participation> participationList =new ArrayList<>();
+        participationList.add(participationE);
 
-        when(participationService.eventParticipationSet(anyInt())).thenReturn(participationSet);
+        when(participationService.eventParticipationSet(anyInt())).thenReturn(participationList);
 
 
         mvc.perform(get(apiPath + "/event/"+event.getEventID())

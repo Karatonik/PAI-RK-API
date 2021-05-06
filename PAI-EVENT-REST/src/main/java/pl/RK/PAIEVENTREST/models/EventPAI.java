@@ -65,6 +65,8 @@ public class EventPAI {
         this.access = access;
         this.dateOfStartEvent = dateOfStartEvent;
         this.userSet = userSet;
+        this.x=0;
+        this.y=0;
     }
     public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, UserPAI organizer) {
         this.name = name;
@@ -76,6 +78,8 @@ public class EventPAI {
         this.userSet = new HashSet<>();
         this.OrganizerSet = new HashSet<>();
         this.OrganizerSet.add(organizer);
+        this.x=0;
+        this.y=0;
     }
 
 
