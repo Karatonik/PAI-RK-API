@@ -28,14 +28,10 @@ public class AuthController {
         return authenticationManager.register(signUpRequest);
     }
 
-    @PostMapping("facebook")
-    public ResponseEntity<?> signInWithFacebook(@Valid @RequestBody SignUpRequest signUpRequest) {
-        return authenticationManager.singInByFacebook(signUpRequest);
+    @PostMapping("external")
+    public ResponseEntity<?> signInWithExternalApp(@Valid @RequestBody SignUpRequest signUpRequest) {
+        return authenticationManager.signInWithExternalApp(signUpRequest);
     }
 
-    @PostMapping("google")
-    public ResponseEntity<?> signInWithGoogle(@Valid @RequestBody SignUpRequest signUpRequest) {
-        return authenticationManager.singInByFacebook(signUpRequest);
-    }
 
 }

@@ -73,14 +73,7 @@ public class AuthServiceImp implements AuthServiceIF {
     }
 
     @Override
-    public ResponseEntity<?> singInByFacebook(SignUpRequest signUpRequest) {
-        UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
-        userPaiRepository.save(userPAI);
-        return authenticate(new LoginRequest(signUpRequest.getEmail(), signUpRequest.getPassword()));
-    }
-
-    @Override
-    public ResponseEntity<?> singInByGoogle(SignUpRequest signUpRequest) {
+    public ResponseEntity<?> signInWithExternalApp(SignUpRequest signUpRequest) {
         UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
         userPaiRepository.save(userPAI);
         return authenticate(new LoginRequest(signUpRequest.getEmail(), signUpRequest.getPassword()));
