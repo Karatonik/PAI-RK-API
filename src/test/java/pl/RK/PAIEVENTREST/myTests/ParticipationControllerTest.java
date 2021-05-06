@@ -79,8 +79,27 @@ public class ParticipationControllerTest {
                 .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("test@test.com")));
+    }
+    @Test
+    public void getParticipationFromEventToUserT() throws Exception{
+        event.setEventID(1);
+        Participation participationE= new Participation(RequestFrom.Event,user,event);
 
+        List<Participation> participationList =new ArrayList<>();
+        participationList.add(participationE);
+
+        when(participationService.participationFromEventToUser(anyString())).thenReturn(participationList);
+
+
+        mvc.perform(get(apiPath + "/user/from/event/"+user.getEmail())
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("test@test.com")));
 
     }
+
+
+
+
 
 }
