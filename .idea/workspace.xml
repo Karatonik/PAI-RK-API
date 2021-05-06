@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserPAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/UserPAI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,10 +160,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1620293851648">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1620311677784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620293851648" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620311677784" />
     <state width="1877" height="151" key="GridCell.Tab.0.bottom" timestamp="1620309221711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

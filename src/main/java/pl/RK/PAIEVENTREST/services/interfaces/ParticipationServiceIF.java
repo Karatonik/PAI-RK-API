@@ -12,5 +12,7 @@ public interface ParticipationServiceIF {
 
     List<Participation> eventParticipationSet(int eventId);
 
+    List<Participation> participationFromEventToUser(String email);
+
 
 }
