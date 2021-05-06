@@ -30,9 +30,9 @@ public class FileController {
         this.fileDBService = fileDBService;
     }
 
-    @PostMapping("/{email}/{typeOfImage}/{eventId}")
-    public boolean upload(@PathVariable String email,@PathVariable TypeOfImage typeOfImage
-            ,@PathVariable Integer eventId ,@RequestPart("file") MultipartFile file) throws IOException {
+    @PostMapping("/")
+    public boolean upload(@RequestParam String email,@RequestParam TypeOfImage typeOfImage
+            ,@RequestParam Integer eventId ,@RequestPart("file") MultipartFile file) throws IOException {
       return  fileDBService.store(file, email, typeOfImage, eventId);
     }
     @GetMapping
@@ -55,7 +55,7 @@ public class FileController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<byte[]> get(@PathVariable Integer id){
+    public ResponseEntity<byte[]> get(@RequestParam Integer id){
         FileDB fileDB = fileDBService.getFile(id);
 
         return ResponseEntity.ok()
@@ -64,14 +64,14 @@ public class FileController {
 }
 
     @GetMapping("/av/{email}")
-        public ResponseEntity<byte[]> getAvatar(@PathVariable String email) {
+        public ResponseEntity<byte[]> getAvatar(@RequestParam String email) {
         FileDB fileDB =fileDBService.getAvatar(email);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
     @GetMapping("/bg/{eventId}")
-    public ResponseEntity<byte[]> getBackGround(@PathVariable Integer eventId) {
+    public ResponseEntity<byte[]> getBackGround(@RequestParam Integer eventId) {
         FileDB fileDB =fileDBService.getBackground(eventId);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
