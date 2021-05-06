@@ -61,4 +61,12 @@ public class ParticipationServiceImp implements ParticipationServiceIF {
         return optionalUserPAI.map(userPAI -> participationRepository.findByUserPAI(userPAI)
                 .stream().filter(v -> v.getRequest().equals(RequestFrom.Event)).collect(Collectors.toList())).orElse(null);
     }
+
+    @Override
+    public List<Participation> participationFromUserToEvent(int eventId) {
+        Optional<EventPAI>optionalEventPAI = eventPaiRepository.findById(eventId);
+        return optionalEventPAI.map(eventPAI -> participationRepository.findByEventPAI(eventPAI)
+                .stream().filter(v->v.getRequest().equals(RequestFrom.User)).collect(Collectors.toList())).orElse(null);
+    }
+
 }

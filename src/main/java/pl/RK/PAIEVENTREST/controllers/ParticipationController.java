@@ -37,6 +37,10 @@ public class ParticipationController {
         return participationService.participationFromEventToUser(email)
                 .stream().map(ParticipationDto::new).collect(Collectors.toList());
     }
+    @GetMapping("/event/from/user/{eventId}")
+    public List<ParticipationDto>getParticipationFromUserToEvent(@PathVariable int eventId){
+        return participationService.participationFromUserToEvent(eventId).stream().map(ParticipationDto::new).collect(Collectors.toList());
+    }
 
 
 }
