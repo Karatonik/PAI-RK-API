@@ -26,17 +26,20 @@ public class AuthServiceImp implements AuthServiceIF {
 
     UserPaiRepository userPaiRepository;
 
+    EmailServiceImp emailService;
+
     PasswordEncoder encoder;
 
     JwtUtils jwtUtils;
 
     @Autowired
     public AuthServiceImp(AuthenticationManager authenticationManager, UserPaiRepository userPaiRepository
-            , PasswordEncoder encoder, JwtUtils jwtUtils) {
+            , PasswordEncoder encoder, JwtUtils jwtUtils, EmailServiceImp emailService) {
         this.authenticationManager = authenticationManager;
         this.userPaiRepository = userPaiRepository;
         this.encoder = encoder;
         this.jwtUtils = jwtUtils;
+        this.emailService = emailService;
     }
 
     @Override
@@ -69,6 +72,13 @@ public class AuthServiceImp implements AuthServiceIF {
         // Create new user's account
         UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
         userPaiRepository.save(userPAI);
+
+        //wysyłanie maila z kodem potwierdzenia
+        try {
+            emailService.sendConfirmation(userPAI.getEmail());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
 

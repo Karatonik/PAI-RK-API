@@ -2,6 +2,7 @@ package pl.RK.PAIEVENTREST.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.common.hash.Hashing;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -51,7 +53,9 @@ public class UserPAI {
         this.password = password;
         this.nick = nick;
         this.activated = false;
-        this.userKey = String.valueOf((hashCode()*hashCode())+21*hashCode());
+        this.userKey = Hashing.sha256()
+                .hashString(String.valueOf(hashCode()), StandardCharsets.UTF_8)
+                .toString();
     }
 
 
@@ -71,7 +75,9 @@ public class UserPAI {
     }
 
     public void getNewKey(){
-        this.userKey = String.valueOf((hashCode()*hashCode())+21*hashCode());
+        this.userKey =  Hashing.sha256()
+                .hashString(String.valueOf(hashCode()), StandardCharsets.UTF_8)
+                .toString();
     }
 
 
