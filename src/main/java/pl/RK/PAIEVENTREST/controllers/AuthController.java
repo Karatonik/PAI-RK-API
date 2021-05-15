@@ -8,7 +8,7 @@ import pl.RK.PAIEVENTREST.services.implementations.AuthServiceImp;
 
 import javax.validation.Valid;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 7200)
+@CrossOrigin(origins = "*", maxAge = 7200)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

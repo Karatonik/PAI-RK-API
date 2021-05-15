@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/parti")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ParticipationController {
 
     ParticipationServiceImp participationService;

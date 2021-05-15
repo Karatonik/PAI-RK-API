@@ -58,7 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/api/mail/**",
                 "/api/user/pwd/**",
                 "/api/user/confirmation/**",
-                "/api/user/delete/**");
+                "/api/user/delete/**",
+                "/");
     }
 
     @Override
