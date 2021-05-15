@@ -52,7 +52,7 @@ public class EventPaiController {
     public List<EventPAIDto> getAll(Principal principal){
         return  eventPaiService.getAll().stream().parallel().map(EventPAIDto::new).collect(Collectors.toList());
     }
-    @GetMapping("/without/{}")
+    @GetMapping("/without/{email}")
     public List<EventPAI>getAllWithoutUser(@PathVariable String email){
         return eventPaiService.getAllWithoutUserEvent(email);
     }
