@@ -11,7 +11,6 @@ import pl.RK.PAIEVENTREST.models.FileDB;
 import pl.RK.PAIEVENTREST.models.dto.FileDBDto;
 import pl.RK.PAIEVENTREST.models.enums.TypeOfImage;
 import pl.RK.PAIEVENTREST.services.implementations.FileDBServiceImp;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,7 +19,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("api/file")
 @CrossOrigin(origins = "http://localhost:3000")
-@EnableSwagger2
 public class FileController {
 
     FileDBServiceImp fileDBService;
