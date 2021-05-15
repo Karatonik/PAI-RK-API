@@ -1,15 +1,19 @@
 package pl.RK.PAIEVENTREST.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -33,7 +37,6 @@ public class UserDetailsImp implements UserDetails {
         this.password = password;
         this.authorities = new HashSet<>();
     }
-
     public static UserDetailsImp build(UserPAI userPAI) {
 
         return new UserDetailsImp(
@@ -41,7 +44,7 @@ public class UserDetailsImp implements UserDetails {
                 userPAI.getNick(),
                 userPAI.getPassword());
     }
-
+    //todo
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;
@@ -81,6 +84,8 @@ public class UserDetailsImp implements UserDetails {
         UserDetailsImp user = (UserDetailsImp) o;
         return Objects.equals(email, user.email);
     }
+
+
 
 
 }

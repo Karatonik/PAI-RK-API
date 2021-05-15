@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://eventporoj.tk")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserPaiController {
 
 
@@ -23,9 +23,13 @@ public class UserPaiController {
         this.userPaiService = userPaiService;
     }
 
-    @PutMapping("/confirmation/{key}")
-    public boolean confirmation(@PathVariable String key) {
-        return userPaiService.confirmation(key);
+    @GetMapping("/confirmation/{key}")
+    public String confirmation(@PathVariable String key) {
+        if (userPaiService.confirmation(key)) {
+            return "Konto uzuyskało weryfikację";
+        } else {
+            return "Błąd serwisu";
+        }
     }
 
     //zmiana hasła , potrzebny klucz z maila
@@ -35,13 +39,16 @@ public class UserPaiController {
     }
 
 
-    @DeleteMapping("/delete/{key}")
-    public boolean delete(@PathVariable String key) {
-        return userPaiService.deleteWithKey(key);
+    @GetMapping("/delete/{key}")
+    public String delete(@PathVariable String key) {
+
+        if (userPaiService.deleteWithKey(key)) {
+            return "Konto zostało usunięte";
+        } else {
+            return "Błąd serwisu";
+        }
     }
 
-
-    //rejestracja
     @PostMapping("{email}/{password}/{nick}")
     public UserPAIDto set(@PathVariable String email, @PathVariable String password, @PathVariable String nick) {
         return new UserPAIDto(userPaiService.set(email, password, nick));

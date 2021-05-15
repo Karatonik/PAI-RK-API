@@ -9,7 +9,8 @@ import javax.mail.MessagingException;
 
 @RestController
 @RequestMapping("/api/mail")
-@CrossOrigin(origins = "http://eventporoj.tk")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class EmailController {
 
     EmailServiceImp emailService;

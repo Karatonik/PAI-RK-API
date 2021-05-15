@@ -8,7 +8,7 @@ import pl.RK.PAIEVENTREST.services.implementations.AuthServiceImp;
 
 import javax.validation.Valid;
 
-@CrossOrigin(origins = "http://eventporoj.tk", maxAge = 7200)
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 7200)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -28,10 +28,13 @@ public class AuthController {
         return authenticationManager.register(signUpRequest);
     }
 
-    @PostMapping("external")
-    public ResponseEntity<?> signInWithExternalApp(@Valid @RequestBody SignUpRequest signUpRequest) {
-        return authenticationManager.signInWithExternalApp(signUpRequest);
+    @PostMapping("facebook")
+    public ResponseEntity<?> signInWithFacebook(@Valid @RequestBody SignUpRequest signUpRequest) {
+        return authenticationManager.singInByFacebook(signUpRequest);
     }
-
+    @PostMapping("google")
+    public ResponseEntity<?> signInWithGoogle(@Valid @RequestBody SignUpRequest signUpRequest) {
+        return authenticationManager.singInByFacebook(signUpRequest);
+    }
 
 }

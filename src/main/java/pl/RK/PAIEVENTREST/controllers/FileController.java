@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("api/file")
-@CrossOrigin(origins = "http://eventporoj.tk")
+@CrossOrigin(origins = "http://localhost:3000")
 public class FileController {
 
     FileDBServiceImp fileDBService;
@@ -31,11 +31,10 @@ public class FileController {
     @PostMapping("/")
     public boolean upload(@RequestParam String email,@RequestParam TypeOfImage typeOfImage
             ,@RequestParam Integer eventId ,@RequestPart("file") MultipartFile file) throws IOException {
-        return  fileDBService.store(file, email, typeOfImage, eventId);
+      return  fileDBService.store(file, email, typeOfImage, eventId);
     }
-
     @GetMapping("/all")
-    public ResponseEntity<List<FileDBDto>> getAll() {
+    public ResponseEntity<List<FileDBDto>> getAll(){
         List<FileDBDto> files = fileDBService.getAllFiles().map(dbFile -> {
             String fileDownloadUri = ServletUriComponentsBuilder
                     .fromCurrentContextPath()
@@ -54,25 +53,24 @@ public class FileController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<byte[]> get(@RequestParam Integer id) {
+    public ResponseEntity<byte[]> get(@RequestParam Integer id){
         FileDB fileDB = fileDBService.getFile(id);
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
-    }
+}
 
     @GetMapping("/av")
-    public ResponseEntity<byte[]> getAvatar(@RequestParam String email) {
-        FileDB fileDB = fileDBService.getAvatar(email);
+        public ResponseEntity<byte[]> getAvatar(@RequestParam String email) {
+        FileDB fileDB =fileDBService.getAvatar(email);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
-
     @GetMapping("/bg")
     public ResponseEntity<byte[]> getBackGround(@RequestParam Integer eventId) {
-        FileDB fileDB = fileDBService.getBackground(eventId);
+        FileDB fileDB =fileDBService.getBackground(eventId);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());

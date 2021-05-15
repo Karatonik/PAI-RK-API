@@ -79,8 +79,6 @@ public class ParticipationControllerTest {
                 .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("test@test.com")));
-
-
     }
     @Test
     public void getParticipationFromEventToUserT() throws Exception{
@@ -114,10 +112,4 @@ public class ParticipationControllerTest {
                 .andDo(print()).andExpect(status().isOk());
 
     }
-
-
-
-
-
-
 }

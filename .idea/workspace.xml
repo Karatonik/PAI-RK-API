@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/FileController.java" afterDir="false" />
-    </list>
+    <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,25 +53,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/PAI-RK-project-management" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PSS-LAB-RK" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.PaiEventRestApplication">
-    <configuration name="CommentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PAI-EVENT-REST" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
-      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.CommentControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EventPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -105,6 +87,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ParticipationControllerTest.getParticipationFromEventToUserT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.ParticipationControllerTest" />
+      <option name="METHOD_NAME" value="getParticipationFromEventToUserT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParticipationControllerTest.getParticipationFromUserToEventT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.ParticipationControllerTest" />
+      <option name="METHOD_NAME" value="getParticipationFromUserToEventT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -129,10 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParticipationControllerTest.getParticipationFromUserToEventT" />
+        <item itemvalue="JUnit.ParticipationControllerTest.getParticipationFromEventToUserT" />
         <item itemvalue="JUnit.UserPaiControllerTest" />
         <item itemvalue="JUnit.ParticipationControllerTest" />
         <item itemvalue="JUnit.EventPaiControllerTest" />
-        <item itemvalue="JUnit.CommentControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +163,11 @@
       <updated>1620293545901</updated>
       <workItem from="1620293556833" duration="1091000" />
       <workItem from="1620294910429" duration="1705000" />
-      <workItem from="1620309505629" duration="1716000" />
+      <workItem from="1620316987714" duration="1147000" />
+      <workItem from="1620323216301" duration="636000" />
+      <workItem from="1620985748438" duration="701000" />
+      <workItem from="1621058662940" duration="723000" />
+      <workItem from="1621061306049" duration="1274000" />
     </task>
     <servers />
   </component>
@@ -162,50 +181,50 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1620326998965">
+    <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1621059100767">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620326998965" />
-    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1620309571208">
+    <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621059100767" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1620317184295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620309571208" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1620326783301">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620317184295" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1621061315425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620326783301" />
-    <state width="1877" height="371" key="GridCell.Tab.0.bottom" timestamp="1620314588297">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621061315425" />
+    <state width="1877" height="368" key="GridCell.Tab.0.bottom" timestamp="1621062590913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588297" />
-    <state width="1877" height="371" key="GridCell.Tab.0.center" timestamp="1620314588296">
+    <state width="1877" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590913" />
+    <state width="1877" height="368" key="GridCell.Tab.0.center" timestamp="1621062590913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588296" />
-    <state width="1877" height="371" key="GridCell.Tab.0.left" timestamp="1620314588296">
+    <state width="1877" height="368" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590913" />
+    <state width="1877" height="368" key="GridCell.Tab.0.left" timestamp="1621062590913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588296" />
-    <state width="1877" height="371" key="GridCell.Tab.0.right" timestamp="1620314588296">
+    <state width="1877" height="368" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590913" />
+    <state width="1877" height="368" key="GridCell.Tab.0.right" timestamp="1621062590913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588296" />
-    <state width="1877" height="371" key="GridCell.Tab.1.bottom" timestamp="1620314588297">
+    <state width="1877" height="368" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590913" />
+    <state width="1877" height="368" key="GridCell.Tab.1.bottom" timestamp="1621062590914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588297" />
-    <state width="1877" height="371" key="GridCell.Tab.1.center" timestamp="1620314588297">
+    <state width="1877" height="368" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590914" />
+    <state width="1877" height="368" key="GridCell.Tab.1.center" timestamp="1621062590913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588297" />
-    <state width="1877" height="371" key="GridCell.Tab.1.left" timestamp="1620314588297">
+    <state width="1877" height="368" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590913" />
+    <state width="1877" height="368" key="GridCell.Tab.1.left" timestamp="1621062590913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588297" />
-    <state width="1877" height="371" key="GridCell.Tab.1.right" timestamp="1620314588297">
+    <state width="1877" height="368" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590913" />
+    <state width="1877" height="368" key="GridCell.Tab.1.right" timestamp="1621062590914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620314588297" />
+    <state width="1877" height="368" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621062590914" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1620305478389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,5 +233,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620305004673" />
+    <state x="-1920" y="0" width="1550" height="880" key="dock-window-1" timestamp="1621061351482">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state x="-1920" y="0" width="1550" height="880" key="dock-window-1/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621061351482" />
   </component>
 </project>
