@@ -66,6 +66,21 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
     }
 
     @Override
+    public List<EventPAI> getAllWithoutUserEvent(String email) {
+        Optional<UserPAI> optionalUserPAI =userPaiRepository.findById(email);
+        if (optionalUserPAI.isPresent()){
+            UserPAI userPAI =optionalUserPAI.get();
+            //admin
+            List<EventPAI> eventPAIList=eventPaiRepository.findAll();
+           eventPaiRepository.getAllEventWhereIMUser(userPAI).forEach(eventPAIList::remove);
+            //user
+           eventPaiRepository.getAllEventWhereIMAdmin(userPAI).forEach(eventPAIList::remove);
+          return eventPAIList;
+        }
+        return new ArrayList<>();
+    }
+
+    @Override
     public List<EventPAI> getAllByCity(String city) {
         return eventPaiRepository.findAllByCity(city);
     }

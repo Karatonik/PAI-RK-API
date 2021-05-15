@@ -8,6 +8,7 @@ import pl.RK.PAIEVENTREST.models.Participation;
 import pl.RK.PAIEVENTREST.models.UserPAI;
 import pl.RK.PAIEVENTREST.models.enums.AccessPAI;
 import pl.RK.PAIEVENTREST.models.enums.RequestFrom;
+import pl.RK.PAIEVENTREST.repositorys.CommentRepository;
 import pl.RK.PAIEVENTREST.repositorys.EventPaiRepository;
 import pl.RK.PAIEVENTREST.repositorys.ParticipationRepository;
 import pl.RK.PAIEVENTREST.repositorys.UserPaiRepository;
@@ -24,16 +25,18 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     UserPaiRepository userPaiRepository;
     EventPaiRepository eventPaiRepository;
     ParticipationRepository participationRepository;
+    CommentRepository commentRepository;
     PasswordEncoder encoder;
 
 
     @Autowired
     public UserPaiServiceImp(UserPaiRepository userPaiRepository
             , EventPaiRepository eventPaiRepository
-            , ParticipationRepository participationRepository, PasswordEncoder encoder) {
+            , ParticipationRepository participationRepository,CommentRepository commentRepository, PasswordEncoder encoder) {
         this.userPaiRepository = userPaiRepository;
         this.eventPaiRepository = eventPaiRepository;
         this.participationRepository = participationRepository;
+        this.commentRepository=commentRepository;
         this.encoder = encoder;
     }
 
@@ -70,6 +73,30 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
     public boolean deleteWithKey(String key) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findByUserKey(key);
         if (optionalUserPAI.isPresent()) {
+            UserPAI userPAI =optionalUserPAI.get();
+            //comment
+            commentRepository.findByUserPai(userPAI).forEach(v->commentRepository.delete(v));
+            //partic
+            participationRepository.findByUserPAI(userPAI).forEach(v->participationRepository.delete(v));
+
+            eventPaiRepository.getAllEventWhereIMAdmin(userPAI).forEach(v->{
+            //i am admin
+                if(v.getOrganizerSet().size()>=2){
+                 Set<UserPAI>userPAISet=   v.getOrganizerSet();
+                 userPAISet.remove(userPAI);
+                 v.setOrganizerSet(userPAISet);
+                 eventPaiRepository.save(v);
+                }else{
+                    eventPaiRepository.delete(v);
+                }
+            });
+            //i am user
+            eventPaiRepository.getAllEventWhereIMUser(userPAI).forEach(v->{
+                Set<UserPAI> userPAISet = v.getUserSet();
+                userPAISet.remove(userPAI);
+                v.setUserSet(userPAISet);
+                eventPaiRepository.save(v);
+            });
             userPaiRepository.delete(optionalUserPAI.get());
             return true;
         }

@@ -22,6 +22,9 @@ public interface EventPaiServiceIF {
 
     List<EventPAI> getAll();
 
+
+    List<EventPAI>getAllWithoutUserEvent(String email);
+
     List<EventPAI> getAllByCity(String city);
 
     EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator);

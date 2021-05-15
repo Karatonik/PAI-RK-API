@@ -2,6 +2,7 @@ package pl.RK.PAIEVENTREST.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.RK.PAIEVENTREST.models.EventPAI;
 import pl.RK.PAIEVENTREST.models.dto.CommentDto;
 import pl.RK.PAIEVENTREST.models.dto.EventPAIDto;
 import pl.RK.PAIEVENTREST.models.dto.UserPAIDto;
@@ -50,6 +51,10 @@ public class EventPaiController {
     @GetMapping
     public List<EventPAIDto> getAll(Principal principal){
         return  eventPaiService.getAll().stream().parallel().map(EventPAIDto::new).collect(Collectors.toList());
+    }
+    @GetMapping("/without/{email}")
+    public List<EventPAI>getAllWithoutUser(@PathVariable String email){
+        return eventPaiService.getAllWithoutUserEvent(email);
     }
 
     @GetMapping("/users/{eventId}")
