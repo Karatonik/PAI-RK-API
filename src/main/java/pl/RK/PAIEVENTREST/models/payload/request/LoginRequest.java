@@ -5,14 +5,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 @AllArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
 public class LoginRequest {
-    @NotBlank
+    @Pattern(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", message = "incorrect email")
     private String email;
-    @NotBlank
-    private  String password;
+
+    @Size(min = 8, max = 20)
+    private String password;
+
+
 }
