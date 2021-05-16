@@ -12,6 +12,8 @@ import pl.RK.PAIEVENTREST.models.dto.FileDBDto;
 import pl.RK.PAIEVENTREST.models.enums.TypeOfImage;
 import pl.RK.PAIEVENTREST.services.implementations.FileDBServiceImp;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,8 +31,10 @@ public class FileController {
     }
 
     @PostMapping("/")
-    public boolean upload(@RequestParam String email,@RequestParam TypeOfImage typeOfImage
-            ,@RequestParam Integer eventId ,@RequestPart("file") MultipartFile file) throws IOException {
+    public boolean upload(@RequestParam @Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",message ="incorrect email" )
+                                      String email, @RequestParam TypeOfImage typeOfImage
+            , @RequestParam @NotBlank Integer eventId
+            , @RequestPart("file") MultipartFile file) throws IOException {
       return  fileDBService.store(file, email, typeOfImage, eventId);
     }
     @GetMapping("/all")
@@ -53,7 +57,7 @@ public class FileController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<byte[]> get(@RequestParam Integer id){
+    public ResponseEntity<byte[]> get(@RequestParam @NotBlank Integer id){
         FileDB fileDB = fileDBService.getFile(id);
 
         return ResponseEntity.ok()
@@ -62,14 +66,15 @@ public class FileController {
 }
 
     @GetMapping("/av")
-        public ResponseEntity<byte[]> getAvatar(@RequestParam String email) {
+        public ResponseEntity<byte[]> getAvatar(@RequestParam @Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",message ="incorrect email" )
+                                                            String email) {
         FileDB fileDB =fileDBService.getAvatar(email);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
     @GetMapping("/bg")
-    public ResponseEntity<byte[]> getBackGround(@RequestParam Integer eventId) {
+    public ResponseEntity<byte[]> getBackGround(@RequestParam @NotBlank Integer eventId) {
         FileDB fileDB =fileDBService.getBackground(eventId);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")

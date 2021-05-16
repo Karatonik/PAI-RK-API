@@ -25,14 +25,13 @@ public class FileDB {
     private byte[] data;
 
 
-
     private TypeOfImage typeOfImage;
 
     @OneToOne
     private UserPAI userPAI;
 
     @OneToOne
-    private  EventPAI eventPAI;
+    private EventPAI eventPAI;
 
 
     public FileDB(String name, String type, byte[] data, TypeOfImage typeOfImage, UserPAI userPAI) {

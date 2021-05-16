@@ -19,6 +19,7 @@ public class UserPAIDto {
     String email;
 
     String nick;
+
     boolean activated;
 
     public UserPAIDto(UserPAI userPAI) {

@@ -20,9 +20,8 @@ public class EventPAI {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer eventID;
 
-   @Column(nullable = false)
+    @Column(nullable = false)
     String name;
-
 
     @Column(nullable = false)
     String province;
@@ -47,13 +46,13 @@ public class EventPAI {
     //geo y
     @Column(columnDefinition = "double default 0")
     double y;
-   // @OneToMany//(mappedBy ="userpai")
-   // @JoinColumn(name ="userpai")
+    // @OneToMany//(mappedBy ="userpai")
+    // @JoinColumn(name ="userpai")
     @ManyToMany(cascade = CascadeType.ALL)
     Set<UserPAI> organizerSet;
 
-   // @OneToMany//(mappedBy ="userpai")
-   // @JoinColumn(name ="userpai")
+    // @OneToMany//(mappedBy ="userpai")
+    // @JoinColumn(name ="userpai")
     @ManyToMany(cascade = CascadeType.ALL)
     Set<UserPAI> userSet;
 
@@ -66,10 +65,11 @@ public class EventPAI {
         this.access = access;
         this.dateOfStartEvent = dateOfStartEvent;
         this.userSet = new HashSet<>();
-        this.organizerSet=organizerSet;
-        this.x=0;
-        this.y=0;
+        this.organizerSet = organizerSet;
+        this.x = 0;
+        this.y = 0;
     }
+
     public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, UserPAI organizer) {
         this.name = name;
         this.province = province;
@@ -80,8 +80,8 @@ public class EventPAI {
         this.userSet = new HashSet<>();
         this.organizerSet = new HashSet<>();
         this.organizerSet.add(organizer);
-        this.x=0;
-        this.y=0;
+        this.x = 0;
+        this.y = 0;
     }
 
 

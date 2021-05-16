@@ -18,7 +18,6 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer commentId;
-
     String text;
 
     @CreationTimestamp

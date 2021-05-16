@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.RK.PAIEVENTREST.models.Comment;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Set;
 @Getter
@@ -11,8 +13,12 @@ import java.util.Set;
 public class CommentDto {
 
     int commentId;
+
+
     String text;
+
     Date date;
+
     String userEmail;
 
     public CommentDto(Comment comment) {

@@ -11,6 +11,7 @@ import javax.validation.Valid;
 @CrossOrigin(origins = "*", maxAge = 7200)
 @RestController
 @RequestMapping("/api/auth")
+
 public class AuthController {
     AuthServiceImp authenticationManager;
 
@@ -25,6 +26,7 @@ public class AuthController {
 
     @PostMapping("singup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
+
         return authenticationManager.register(signUpRequest);
     }
 
@@ -32,6 +34,7 @@ public class AuthController {
     public ResponseEntity<?> signInWithFacebook(@Valid @RequestBody SignUpRequest signUpRequest) {
         return authenticationManager.singInByFacebook(signUpRequest);
     }
+
     @PostMapping("google")
     public ResponseEntity<?> signInWithGoogle(@Valid @RequestBody SignUpRequest signUpRequest) {
         return authenticationManager.singInByFacebook(signUpRequest);

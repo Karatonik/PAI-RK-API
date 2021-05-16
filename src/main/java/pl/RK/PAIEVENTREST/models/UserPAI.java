@@ -1,22 +1,17 @@
 package pl.RK.PAIEVENTREST.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.common.hash.Hashing;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pl.RK.PAIEVENTREST.services.implementations.EventPaiServiceImp;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @AllArgsConstructor
 @Getter
@@ -25,20 +20,12 @@ import java.util.Set;
 @Entity
 public class UserPAI {
     @Id
-    @Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",message ="incorrect email" )
     String email;
 
-    @NotBlank(message ="password cannot be blank " )
-    @Pattern(regexp="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$",message ="incorrect password" )
-    //Password must contain at least one digit [0-9].
-    // Password must contain at least one lowercase Latin character [a-z].
-    //Password must contain at least one uppercase Latin character [A-Z].
-    //Password must contain at least one special character like ! @ # & ( ).
-    //Password must contain a length of at least 8 characters and a maximum of 20 characters.
-    //Sample : !Mocnehaslo12345
+
     String password;
 
-    @NotBlank(message ="nick cannot be blank " )
+
     String nick;
 
     boolean activated;
@@ -46,9 +33,7 @@ public class UserPAI {
     @JsonIgnore
     private String userKey;
 
-
-
-    public UserPAI(String email,  String password, String nick) {
+    public UserPAI(String email, String password, String nick) {
         this.email = email;
         this.password = password;
         this.nick = nick;
@@ -74,12 +59,11 @@ public class UserPAI {
         return Objects.hash(getEmail(), getPassword(), getNick(), new Date(System.currentTimeMillis()));
     }
 
-    public void getNewKey(){
-        this.userKey =  Hashing.sha256()
+    public void getNewKey() {
+        this.userKey = Hashing.sha256()
                 .hashString(String.valueOf(hashCode()), StandardCharsets.UTF_8)
                 .toString();
     }
-
 
 
 }
