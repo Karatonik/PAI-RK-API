@@ -94,7 +94,7 @@ public class CommentControllerTest {
         comment.setCommentId(1);
         comment.setDate(new Date(System.currentTimeMillis()));
 
-        when(commentService.delete(anyInt())).thenReturn(true);
+        when(commentService.delete(anyInt(),anyString())).thenReturn(true);
 
         mvc.perform(delete(apiPath + "/1").contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk()).andExpect(content()
