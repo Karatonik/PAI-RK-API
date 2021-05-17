@@ -9,6 +9,5 @@ public interface AuthServiceIF {
 
     ResponseEntity<?> register(SignUpRequest signUpRequest);
 
-    ResponseEntity<?> singInByFacebook(SignUpRequest signUpRequest);
-    ResponseEntity<?> singInByGoogle(SignUpRequest signUpRequest);
+    ResponseEntity<?> singInByExternal(SignUpRequest signUpRequest);
 }

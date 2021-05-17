@@ -30,14 +30,9 @@ public class AuthController {
         return authenticationManager.register(signUpRequest);
     }
 
-    @PostMapping("facebook")
-    public ResponseEntity<?> signInWithFacebook(@Valid @RequestBody SignUpRequest signUpRequest) {
-        return authenticationManager.singInByFacebook(signUpRequest);
-    }
-
-    @PostMapping("google")
-    public ResponseEntity<?> signInWithGoogle(@Valid @RequestBody SignUpRequest signUpRequest) {
-        return authenticationManager.singInByFacebook(signUpRequest);
+    @PostMapping("external")
+    public ResponseEntity<?> signInWithExternal(@Valid @RequestBody SignUpRequest signUpRequest) {
+        return authenticationManager.singInByExternal(signUpRequest);
     }
 
 }
