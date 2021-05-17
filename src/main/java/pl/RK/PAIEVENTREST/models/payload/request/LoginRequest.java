@@ -16,7 +16,7 @@ public class LoginRequest {
     @Pattern(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", message = "incorrect email")
     private String email;
 
-    @Size(min = 8, max = 20)
+    @Size(min = 8)
     private String password;
 
 
