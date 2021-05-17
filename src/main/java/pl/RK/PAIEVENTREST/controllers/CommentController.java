@@ -29,9 +29,9 @@ public class CommentController {
         return new CommentDto(commentService.create(email, eventId, text));
     }
 
-    @DeleteMapping("/{commentId}")
-    public boolean delete(@PathVariable @NotBlank int commentId) {
-        return commentService.delete(commentId);
+    @DeleteMapping("/{commentId}/{email}")
+    public boolean delete(@PathVariable @NotBlank int commentId , @PathVariable String email) {
+        return commentService.delete(commentId,email);
     }
 
     @PutMapping("/{commentId}/{text}")
