@@ -24,14 +24,17 @@ public class UserDetailsImp implements UserDetails {
     @JsonIgnore
     private String password;
 
+    private boolean activated;
+
     private Collection<? extends GrantedAuthority> authorities;
 
 
-    public UserDetailsImp(String email, String nick, String password) {
+    public UserDetailsImp(String email, String nick, String password,boolean activated) {
         this.email = email;
         this.nick = nick;
         this.password = password;
         this.authorities = new HashSet<>();
+        this.activated=activated;
     }
 
     public static UserDetailsImp build(UserPAI userPAI) {
@@ -39,7 +42,7 @@ public class UserDetailsImp implements UserDetails {
         return new UserDetailsImp(
                 userPAI.getEmail(),
                 userPAI.getNick(),
-                userPAI.getPassword());
+                userPAI.getPassword(),userPAI.isActivated());
     }
 
     @Override

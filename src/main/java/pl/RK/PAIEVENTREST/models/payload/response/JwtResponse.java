@@ -13,11 +13,12 @@ public class JwtResponse {
     private final String type = "Bearer";
     private String nick;
     private String email;
+    private boolean activated;
 
-    public JwtResponse(String token, String nick, String email) {
+    public JwtResponse(String token, String nick, String email,boolean activated) {
         this.token = token;
         this.nick = nick;
         this.email = email;
-
+        this.activated = activated;
     }
 }

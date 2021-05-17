@@ -58,7 +58,7 @@ public class AuthServiceImp implements AuthServiceIF {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 */
-        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getNick(),userDetails.getEmail()));
+        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getNick(),userDetails.getEmail(),userDetails.isActivated()));
     }
 
 
@@ -83,16 +83,10 @@ public class AuthServiceImp implements AuthServiceIF {
     }
 
     @Override
-    public ResponseEntity<?> singInByFacebook(SignUpRequest signUpRequest) {
+    public ResponseEntity<?> singInByExternal(SignUpRequest signUpRequest) {
         UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
         userPaiRepository.save(userPAI);
         return authenticate(new LoginRequest(signUpRequest.getEmail(), signUpRequest.getPassword()));
     }
 
-    @Override
-    public ResponseEntity<?> singInByGoogle(SignUpRequest signUpRequest) {
-        UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
-        userPaiRepository.save(userPAI);
-        return authenticate(new LoginRequest(signUpRequest.getEmail(), signUpRequest.getPassword()));
-    }
 }
