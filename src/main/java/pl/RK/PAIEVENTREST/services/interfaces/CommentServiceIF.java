@@ -7,7 +7,7 @@ public interface CommentServiceIF {
 
     Comment create(String userEmail, int eventId, String text);
 
-    boolean delete(int commentId);
+    boolean delete(int commentId , String email);
 
     Comment update(int commentId, String text);
 }

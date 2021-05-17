@@ -55,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PSS-LAB-RK" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.PaiEventRestApplication">
@@ -171,6 +171,7 @@
       <workItem from="1621058662940" duration="723000" />
       <workItem from="1621061306049" duration="1274000" />
       <workItem from="1621195224585" duration="9029000" />
+      <workItem from="1621277044473" duration="274000" />
     </task>
     <servers />
   </component>

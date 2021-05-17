@@ -39,11 +39,16 @@ public class CommentServiceImp implements CommentServiceIF {
     }
 
     @Override
-    public boolean delete(int commentId) {
+    public boolean delete(int commentId ,String email) {
         Optional<Comment> optionalComment = commentRepository.findById(commentId);
-        if(optionalComment.isPresent()){
-            commentRepository.delete(optionalComment.get());
-            return true;
+        Optional<UserPAI> optionalUserPAI =userPaiRepository.findById(email);
+        if(optionalComment.isPresent()&& optionalUserPAI.isPresent()){
+            Comment comment = optionalComment.get();
+            UserPAI user = optionalUserPAI.get();
+            if(comment.getUserPai().equals(user)){
+                commentRepository.delete(optionalComment.get());
+                return true;
+            }
         }
         return false;
     }
