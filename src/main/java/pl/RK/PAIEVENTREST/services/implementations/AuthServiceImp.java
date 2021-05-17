@@ -85,6 +85,7 @@ public class AuthServiceImp implements AuthServiceIF {
     @Override
     public ResponseEntity<?> singInByExternal(SignUpRequest signUpRequest) {
         UserPAI userPAI = new UserPAI(signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getNick());
+        userPAI.setActivated(true);
         userPaiRepository.save(userPAI);
         return authenticate(new LoginRequest(signUpRequest.getEmail(), signUpRequest.getPassword()));
     }
