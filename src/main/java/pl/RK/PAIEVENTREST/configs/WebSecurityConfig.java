@@ -59,6 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/api/user/pwd/**",
                 "/api/user/confirmation/**",
                 "/api/user/delete/**",
+                "/api/file/**",
                 "/");
     }
 

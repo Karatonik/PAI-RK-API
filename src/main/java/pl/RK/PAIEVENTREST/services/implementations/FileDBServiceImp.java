@@ -1,5 +1,6 @@
 package pl.RK.PAIEVENTREST.services.implementations;
 
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -13,6 +14,10 @@ import pl.RK.PAIEVENTREST.repositorys.FileDBRepository;
 import pl.RK.PAIEVENTREST.repositorys.UserPaiRepository;
 import pl.RK.PAIEVENTREST.services.interfaces.FileDBServiceIF;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Optional;
@@ -39,6 +44,7 @@ public class FileDBServiceImp implements FileDBServiceIF {
 
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
             FileDB fileDB;
+
             if(typeOfImage.equals(TypeOfImage.Avatar)){
                 fileDBRepository.findByUserPAIAndTypeOfImage(optionalUserPAI.get(),TypeOfImage.Avatar).ifPresent(db -> fileDBRepository.delete(db));
                fileDB = new FileDB(fileName, file.getContentType(), file.getBytes(),typeOfImage,optionalUserPAI.get());
