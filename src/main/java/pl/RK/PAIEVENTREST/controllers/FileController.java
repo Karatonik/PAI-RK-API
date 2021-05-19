@@ -75,7 +75,7 @@ public class FileController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
-    @GetMapping("/bg")
+    @GetMapping(path = "/bg",produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<byte[]> getBackGround(@RequestParam @NotBlank Integer eventId) {
         FileDB fileDB =fileDBService.getBackground(eventId);
         return ResponseEntity.ok()
