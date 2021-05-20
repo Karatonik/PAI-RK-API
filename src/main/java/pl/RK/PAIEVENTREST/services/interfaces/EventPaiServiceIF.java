@@ -27,7 +27,7 @@ public interface EventPaiServiceIF {
 
     List<EventPAI> getAllByCity(String city);
 
-    EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator);
+    EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator , double x,double y);
 
     boolean delete(int eventId);
 

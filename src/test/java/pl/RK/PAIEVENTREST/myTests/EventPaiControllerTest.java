@@ -72,12 +72,12 @@ public class EventPaiControllerTest {
         this.event.setEventID(1);
 
         when(eventPaiService.set(any(String.class), any(String.class), any(String.class), any(String.class)
-                , any(AccessPAI.class), any(LocalDateTime.class), any(String.class))).thenReturn(event);
+                , any(AccessPAI.class), any(LocalDateTime.class), any(String.class),anyDouble(),anyDouble())).thenReturn(event);
 
         mvc.perform(post(apiPath + "/" + event.getName() + "/" + event.getProvince() + "/"
                 + event.getCity() + "/" + event.getAddress() + "/" + event.getAccess() + "/"
                 + event.getDateOfStartEvent().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
-                + "/" + user.getEmail())
+                + "/" + user.getEmail()+"/"+event.getX()+"/"+event.getY())
                 .contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("testEvent")));

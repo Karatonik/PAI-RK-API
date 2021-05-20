@@ -67,15 +67,15 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
 
     @Override
     public List<EventPAI> getAllWithoutUserEvent(String email) {
-        Optional<UserPAI> optionalUserPAI =userPaiRepository.findById(email);
-        if (optionalUserPAI.isPresent()){
-            UserPAI userPAI =optionalUserPAI.get();
+        Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(email);
+        if (optionalUserPAI.isPresent()) {
+            UserPAI userPAI = optionalUserPAI.get();
             //admin
-            List<EventPAI> eventPAIList=eventPaiRepository.findAll();
-           eventPaiRepository.getAllEventWhereIMUser(userPAI).forEach(eventPAIList::remove);
+            List<EventPAI> eventPAIList = eventPaiRepository.findAll();
+            eventPaiRepository.getAllEventWhereIMUser(userPAI).forEach(eventPAIList::remove);
             //user
-           eventPaiRepository.getAllEventWhereIMAdmin(userPAI).forEach(eventPAIList::remove);
-          return eventPAIList;
+            eventPaiRepository.getAllEventWhereIMAdmin(userPAI).forEach(eventPAIList::remove);
+            return eventPAIList;
         }
         return new ArrayList<>();
     }
@@ -86,14 +86,14 @@ public class EventPaiServiceImp implements EventPaiServiceIF {
     }
 
     @Override
-    public EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator) {
+    public EventPAI set(String name, String province, String city, String address, AccessPAI accessPAI, LocalDateTime dateOfStartEvent, String emailOfCreator, double x, double y) {
         Optional<UserPAI> optionalUserPAI = userPaiRepository.findById(emailOfCreator);
         if (optionalUserPAI.isPresent()) {
             if (eventPaiRepository.findByNameAndProvinceAndCityAndAddress(name, province, city, address).isEmpty()) {
 
                 Set<UserPAI> organizerPAISet = new HashSet<>();
                 organizerPAISet.add(optionalUserPAI.get());
-                return eventPaiRepository.save(new EventPAI(name, province, city, address, accessPAI, dateOfStartEvent, organizerPAISet));
+                return eventPaiRepository.save(new EventPAI(name, province, city, address, accessPAI, dateOfStartEvent, organizerPAISet, x, y));
             }
             return null;
         }

@@ -34,13 +34,13 @@ public class EventPaiController {
         return eventPaiService.getAllComments(eventId).stream().map(CommentDto::new).collect(Collectors.toList());
     }
 
-    @PostMapping("/{name}/{prov}/{city}/{address}/{accessPAI}/{dateOfStartEvent}/{email}")
+    @PostMapping("/{name}/{prov}/{city}/{address}/{accessPAI}/{dateOfStartEvent}/{email}/{x}/{y}")
     public EventPAIDto addEvent(@PathVariable @NotBlank String name, @PathVariable @NotBlank String prov, @PathVariable @NotBlank String city
             , @NotBlank @PathVariable String address, @PathVariable AccessPAI accessPAI
             , @PathVariable LocalDateTime dateOfStartEvent,
                                 @Pattern(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", message = "incorrect email")
-                                @PathVariable String email) {
-        return new EventPAIDto(eventPaiService.set(name, prov, city, address, accessPAI, dateOfStartEvent, email));
+                                @PathVariable String email, @PathVariable double x, @PathVariable double y) {
+        return new EventPAIDto(eventPaiService.set(name, prov, city, address, accessPAI, dateOfStartEvent, email, x, y));
     }
 
     @DeleteMapping("/{eventId}")

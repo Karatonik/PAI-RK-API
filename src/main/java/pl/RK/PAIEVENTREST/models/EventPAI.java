@@ -70,6 +70,20 @@ public class EventPAI {
         this.y = 0;
     }
 
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, Set<UserPAI> organizerSet, double x, double y) {
+        this.name = name;
+        this.province = province;
+        this.city = city;
+        this.address = address;
+        this.access = access;
+        this.dateOfStartEvent = dateOfStartEvent;
+        this.userSet = new HashSet<>();
+        this.organizerSet = organizerSet;
+        this.x = x;
+        this.y = y;
+    }
+
+
     public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, UserPAI organizer) {
         this.name = name;
         this.province = province;
@@ -84,5 +98,18 @@ public class EventPAI {
         this.y = 0;
     }
 
+    public EventPAI(String name, String province, String city, String address, AccessPAI access, LocalDateTime dateOfStartEvent, UserPAI organizer, double x, double y) {
+        this.name = name;
+        this.province = province;
+        this.city = city;
+        this.address = address;
+        this.access = access;
+        this.dateOfStartEvent = dateOfStartEvent;
+        this.userSet = new HashSet<>();
+        this.organizerSet = new HashSet<>();
+        this.organizerSet.add(organizer);
+        this.x = x;
+        this.y = y;
+    }
 
 }
