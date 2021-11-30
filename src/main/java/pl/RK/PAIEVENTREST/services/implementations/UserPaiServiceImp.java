@@ -75,7 +75,7 @@ public class UserPaiServiceImp implements UserPaiServiceIF {
         if (optionalUserPAI.isPresent()) {
             UserPAI userPAI =optionalUserPAI.get();
             //comment
-            commentRepository.findByUserPai(userPAI).forEach(v->commentRepository.delete(v));
+            commentRepository.deleteAll(commentRepository.findByUserPai(userPAI));
             //partic
             participationRepository.findByUserPAI(userPAI).forEach(v->participationRepository.delete(v));
 

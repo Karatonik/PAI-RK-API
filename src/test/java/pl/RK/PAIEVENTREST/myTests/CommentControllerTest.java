@@ -96,7 +96,7 @@ public class CommentControllerTest {
 
         when(commentService.delete(anyInt(),anyString())).thenReturn(true);
 
-        mvc.perform(delete(apiPath + "/1").contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
+        mvc.perform(delete(apiPath + "/1/"+user.getEmail()).contentType(MediaType.APPLICATION_JSON).accept(MediaType.ALL))
                 .andDo(print()).andExpect(status().isOk()).andExpect(content()
                 .string(containsString("true")));
     }

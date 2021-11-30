@@ -102,6 +102,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<properties>
+			<sonar.organization>karatonik</sonar.organization>
+			<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		</properties>
 
 
 		<dependency>

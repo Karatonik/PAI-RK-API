@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="64ebf776-fd50-422a-a661-c870e5f887a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/controllers/EventPaiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/models/EventPAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/EventPaiServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/EventPaiServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/EventPaiServiceIF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/interfaces/EventPaiServiceIF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/EventPaiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/EventPaiControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/UserPaiServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/RK/PAIEVENTREST/services/implementations/UserPaiServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/CommentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/CommentControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/UserPaiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/RK/PAIEVENTREST/myTests/UserPaiControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,18 +40,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
+      </map>
     </option>
   </component>
   <component name="ProjectId" id="1s9nCT4j30dO1k3aajKgycbSp4x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -60,10 +70,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PW-RK-Page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Spring Boot.PaiEventRestApplication">
+  <component name="RunManager" selected="JUnit.UserPaiControllerTest">
+    <configuration name="CommentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.CommentControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EventPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -94,38 +119,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParticipationControllerTest.getParticipationFromEventToUserT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PAI-EVENT-REST" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
-      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.ParticipationControllerTest" />
-      <option name="METHOD_NAME" value="getParticipationFromEventToUserT" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParticipationControllerTest.getParticipationFromUserToEventT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PAI-EVENT-REST" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
-      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.ParticipationControllerTest" />
-      <option name="METHOD_NAME" value="getParticipationFromUserToEventT" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserPaiControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PAI-EVENT-REST" />
       <extension name="coverage">
@@ -141,6 +134,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserPaiControllerTest.deleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PAI-EVENT-REST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.RK.PAIEVENTREST.myTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.RK.PAIEVENTREST.myTests" />
+      <option name="MAIN_CLASS_NAME" value="pl.RK.PAIEVENTREST.myTests.UserPaiControllerTest" />
+      <option name="METHOD_NAME" value="deleteTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PaiEventRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="PAI-EVENT-REST" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.RK.PAIEVENTREST.PaiEventRestApplication" />
@@ -150,14 +159,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ParticipationControllerTest.getParticipationFromUserToEventT" />
-        <item itemvalue="JUnit.ParticipationControllerTest.getParticipationFromEventToUserT" />
         <item itemvalue="JUnit.UserPaiControllerTest" />
+        <item itemvalue="JUnit.UserPaiControllerTest.deleteTest" />
         <item itemvalue="JUnit.ParticipationControllerTest" />
         <item itemvalue="JUnit.EventPaiControllerTest" />
+        <item itemvalue="JUnit.CommentControllerTest" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -188,88 +198,39 @@
       <workItem from="1621416548460" duration="7114000" />
       <workItem from="1621451912389" duration="4888000" />
       <workItem from="1621467120426" duration="115000" />
-      <workItem from="1621509492289" duration="956000" />
+      <workItem from="1621509492289" duration="3100000" />
+      <workItem from="1621864477094" duration="1948000" />
+      <workItem from="1622530475173" duration="407000" />
+      <workItem from="1622628681783" duration="215000" />
+      <workItem from="1622629673506" duration="2673000" />
+      <workItem from="1622642408840" duration="661000" />
+      <workItem from="1623197215049" duration="698000" />
+      <workItem from="1623198769932" duration="976000" />
+      <workItem from="1623200164848" duration="1529000" />
+      <workItem from="1623225272679" duration="44000" />
+      <workItem from="1624616148244" duration="57000" />
+      <workItem from="1633459832909" duration="68000" />
+      <workItem from="1633509885537" duration="32000" />
+      <workItem from="1633510549768" duration="3351000" />
+      <workItem from="1633526999629" duration="2867000" />
+      <workItem from="1633550724802" duration="11000" />
+      <workItem from="1633552812035" duration="609000" />
+      <workItem from="1633681156272" duration="5000" />
+      <workItem from="1634380434996" duration="1440000" />
+      <workItem from="1634465460349" duration="9120000" />
+      <workItem from="1634482613679" duration="2890000" />
+      <workItem from="1634503766378" duration="22000" />
+      <workItem from="1638269138999" duration="218000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1621059100767">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621059100767" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1621115029642">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621115029642" />
-    <state x="-1386" y="271" width="493" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1621431193713">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state x="-1386" y="271" width="493" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621431193713" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1621431437437">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="542" y="414" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621292381975" />
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621431437437" />
-    <state width="1493" height="217" key="GridCell.Tab.0.bottom" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state width="1493" height="217" key="GridCell.Tab.0.center" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state width="1493" height="217" key="GridCell.Tab.0.left" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state width="1493" height="217" key="GridCell.Tab.0.right" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state width="1493" height="217" key="GridCell.Tab.1.bottom" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state width="1493" height="217" key="GridCell.Tab.1.center" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state width="1493" height="217" key="GridCell.Tab.1.left" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state width="1493" height="217" key="GridCell.Tab.1.right" timestamp="1621464524643">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="217" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@-1920.0.1536.824" timestamp="1621464524643" />
-    <state width="1875" height="217" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621460005282" />
-    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1621205636251">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621205636251" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1620305004673">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1620305004673" />
-    <state x="-1920" y="0" width="1550" height="880" key="dock-window-1" timestamp="1621061351482">
-      <screen x="-1920" y="0" width="1536" height="824" />
-    </state>
-    <state x="-1920" y="0" width="1550" height="880" key="dock-window-1/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1621061351482" />
   </component>
 </project>
